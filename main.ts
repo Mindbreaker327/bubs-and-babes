@@ -191,7 +191,7 @@ game.onUpdateInterval(Time, function () {
         . . . . . f f . . f f . . . . . 
         `, SpriteKind.Enemy)
     Obstacle.setPosition(randint(160, 0), 0)
-    Obstacle.setVelocity(27, VY)
+    Obstacle.setVelocity(0, VY)
 })
 game.onUpdateInterval(100, function () {
     MySpriteX = mySprite.x
