@@ -175,7 +175,7 @@ game.onUpdateInterval(Time, function () {
             . . . f f 1 d 1 d 1 d f f . . . 
             . . . . . f f b b f f . . . . . 
             `, SpriteKind.Enemy)
-        Obstacle.setPosition(randint(160, 0), 0)
+        Obstacle.setPosition(randint(140, 20), 20)
         Obstacle.setVelocity(0, VY)
     } else if (X == 2) {
         Obstacle = sprites.create(img`
@@ -196,7 +196,7 @@ game.onUpdateInterval(Time, function () {
             . . . f f 1 d 1 d 1 d f f . . . 
             . . . . . f f b b f f . . . . . 
             `, SpriteKind.Enemy)
-        Obstacle.setPosition(randint(160, 0), 150)
+        Obstacle.setPosition(randint(140, 20), 130)
         Obstacle.setVelocity(0, VY * -1)
     } else if (X == 3) {
         Obstacle = sprites.create(img`
@@ -217,7 +217,7 @@ game.onUpdateInterval(Time, function () {
             . . f b d 1 d 1 d d b f . . . . 
             . . . f f f b b f f f . . . . . 
             `, SpriteKind.Enemy)
-        Obstacle.setPosition(160, randint(160, 0))
+        Obstacle.setPosition(140, randint(140, 20))
         Obstacle.setVelocity(VX * -1, 0)
     } else {
         Obstacle = sprites.create(img`
@@ -238,7 +238,7 @@ game.onUpdateInterval(Time, function () {
             . . . . f f d 1 d 1 d 1 f f . . 
             . . . . . . f f b b f f . . . . 
             `, SpriteKind.Enemy)
-        Obstacle.setPosition(0, randint(160, 0))
+        Obstacle.setPosition(20, randint(140, 20))
         Obstacle.setVelocity(VX, 0)
     }
 })
