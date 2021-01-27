@@ -152,7 +152,7 @@ game.onUpdateInterval(1000, function () {
     Time += -1
 })
 game.onUpdateInterval(Time, function () {
-    X = randint(0, 10)
+    X = randint(1, 4)
     Obstacle = sprites.create(img`
         . . . . . . 5 . 5 . . . . . . . 
         . . . . . f 5 5 5 f f . . . . . 
@@ -173,6 +173,15 @@ game.onUpdateInterval(Time, function () {
         `, SpriteKind.Enemy)
     Obstacle.setPosition(randint(160, 0), 0)
     Obstacle.setVelocity(0, VY)
+    if (X == 1) {
+    	
+    } else if (X == 2) {
+    	
+    } else if (X == 3) {
+    	
+    } else {
+    	
+    }
 })
 game.onUpdateInterval(100, function () {
     MySpriteX = mySprite.x
