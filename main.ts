@@ -56,10 +56,6 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, ot
         info.changeLifeBy(3)
     }
 })
-scene.onOverlapTile(SpriteKind.Enemy, sprites.dungeon.floorLight0, function (sprite, location) {
-    sprite.destroy()
-    info.changeScoreBy(1)
-})
 info.onCountdownEnd(function () {
     Powerup = sprites.create(img`
         . . . . . . . . . . . . . . . . 
@@ -116,6 +112,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherS
     Obstacle.destroy()
     Poweruptwo_3.destroy()
 })
+let X = 0
 let Powerup: Sprite = null
 let PowerUp1: Sprite = null
 let PowerupType = 0
@@ -144,24 +141,7 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 controller.moveSprite(mySprite, 100, 0)
 mySprite.setPosition(MySpriteX, 110)
-tiles.setTilemap(tiles.createTilemap(hex`0a00100002020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020201010101010101010101020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202`, img`
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    `, [myTiles.transparency16,sprites.dungeon.floorLight0,sprites.castle.tilePath5], TileScale.Sixteen))
+tiles.setTilemap(tilemap`level1`)
 let VY = 50
 let Time = 250
 info.setLife(3)
@@ -172,6 +152,7 @@ game.onUpdateInterval(1000, function () {
     Time += -1
 })
 game.onUpdateInterval(Time, function () {
+    X = randint(0, 10)
     Obstacle = sprites.create(img`
         . . . . . . 5 . 5 . . . . . . . 
         . . . . . f 5 5 5 f f . . . . . 
