@@ -8,25 +8,31 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant2, function (sprite, oth
     Obstacle.destroy()
     Poweruptwo_2.destroy()
     Poweruptwo_3 = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . c c c . . . . . . 
-        . . . . . . a b a a . . . . . . 
-        . . . . . c b a f c a c . . . . 
-        . . . . c b b b f f a c c . . . 
-        . . . . b b f a b b a a c . . . 
-        . . . . c b f f b a f c a . . . 
-        . . . . . c a a c b b a . . . . 
-        . . . . . . c c c c . . . . . . 
-        . . . . . . . c . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        22222222222222222222
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        2..................2
+        22222222222222222222
         `, SpriteKind.Assistant3)
-    Poweruptwo_3.setPosition(MySpriteX, 100)
-    controller.moveSprite(Poweruptwo_3, 100, 0)
+    Poweruptwo_3.setPosition(MySpriteX, MySpriteY)
+    controller.moveSprite(Poweruptwo_3, 100, 100)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
     sprite.destroy()
@@ -68,6 +74,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Assistant3, function (sprite, ot
     Obstacle.destroy()
     Poweruptwo_3.destroy()
 })
+scene.onOverlapTile(SpriteKind.Enemy, sprites.dungeon.floorLight0, function (sprite, location) {
+    sprite.destroy()
+})
 info.onCountdownEnd(function () {
     Powerup = sprites.create(img`
         . . . . . . . . . . . . . . . . 
@@ -100,31 +109,38 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant, function (sprite, othe
     Obstacle.destroy()
     PowerUp1.destroy()
     Poweruptwo_2 = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . c c c c . . 
-        . c c c c c . c c c c c f c c . 
-        c c a c c c c c 8 f f c f f c c 
-        c a f a a c c a f f c a a f f c 
-        c a 8 f a a c a c c c a a a a c 
-        c b c f a a a a a c c c c c c c 
-        c b b a a c f 8 a c c c 8 c c c 
-        . c b b a b c f a a a 8 8 c c . 
-        . . . . a a b b b a a 8 a c . . 
-        . . . . c b c a a c c b . . . . 
-        . . . . b b c c a b b a . . . . 
-        . . . . b b a b a 6 a . . . . . 
-        . . . . c b b b 6 6 c . . . . . 
-        . . . . . c a 6 6 b c . . . . . 
-        . . . . . . . c c c . . . . . . 
+        222222222222222222222
+        222222222222222222222
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        22.................22
+        222222222222222222222
+        222222222222222222222
         `, SpriteKind.Assistant2)
-    Poweruptwo_2.setPosition(MySpriteX, 100)
-    controller.moveSprite(Poweruptwo_2, 100, 0)
+    Poweruptwo_2.setPosition(MySpriteX, MySpriteY)
+    controller.moveSprite(Poweruptwo_2, 100, 100)
 })
 let X = 0
 let Powerup: Sprite = null
-let MySpriteY = 0
 let PowerUp1: Sprite = null
 let PowerupType = 0
+let MySpriteY = 0
 let Poweruptwo_3: Sprite = null
 let Poweruptwo_2: Sprite = null
 let Obstacle: Sprite = null
@@ -153,7 +169,7 @@ mySprite.setPosition(MySpriteX, 100)
 scene.cameraFollowSprite(mySprite)
 tiles.setTilemap(tilemap`level1`)
 let VY = 50
-let Time = 250
+let Time = 2000
 let VX = 50
 info.setLife(3)
 info.setScore(0)
@@ -184,7 +200,7 @@ game.onUpdateInterval(Time, function () {
             . . . f f 1 d 1 d 1 d f f . . . 
             . . . . . f f b b f f . . . . . 
             `, SpriteKind.Enemy)
-        Obstacle.setPosition(randint(140, 20), 20)
+        Obstacle.setPosition(randint(140, 20), 30)
         Obstacle.setVelocity(0, VY)
     } else if (X == 2) {
         Obstacle = sprites.create(img`
@@ -226,7 +242,7 @@ game.onUpdateInterval(Time, function () {
             . . f b d 1 d 1 d d b f . . . . 
             . . . f f f b b f f f . . . . . 
             `, SpriteKind.Enemy)
-        Obstacle.setPosition(140, randint(140, 20))
+        Obstacle.setPosition(130, randint(140, 20))
         Obstacle.setVelocity(VX * -1, 0)
     } else {
         Obstacle = sprites.create(img`
@@ -247,7 +263,7 @@ game.onUpdateInterval(Time, function () {
             . . . . f f d 1 d 1 d 1 f f . . 
             . . . . . . f f b b f f . . . . 
             `, SpriteKind.Enemy)
-        Obstacle.setPosition(20, randint(140, 20))
+        Obstacle.setPosition(30, randint(140, 20))
         Obstacle.setVelocity(VX, 0)
     }
 })
