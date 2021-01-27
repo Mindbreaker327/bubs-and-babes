@@ -34,6 +34,37 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant2, function (sprite, oth
     Poweruptwo_3.setPosition(MySpriteX, MySpriteY)
     controller.moveSprite(Poweruptwo_3, 100, 100)
 })
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySpriteUp.setImage(img`
+        . . . . . . f f f f . . . . . . 
+        . . . . f f e e e e f f . . . . 
+        . . . f e e e f f e e e f . . . 
+        . . f f f f f 2 2 f f f f f . . 
+        . . f f e 2 e 2 2 e 2 e f f . . 
+        . . f e 2 f 2 f f 2 f 2 e f . . 
+        . . f f f 2 2 e e 2 2 f f f . . 
+        . f f e f 2 f e e f 2 f e f f . 
+        . f e e f f e e e e f e e e f . 
+        . . f e e e e e e e e e e f . . 
+        . . . f e e e e e e e e f . . . 
+        . . e 4 f f f f f f f f 4 e . . 
+        . . 4 d f 2 2 2 2 2 2 f d 4 . . 
+        . . 4 4 f 4 4 4 4 4 4 f 4 4 . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . . f f . . f f . . . . . 
+        `)
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (mySpriteUp.image == sprites.castle.heroWalkFront3) {
+    	
+    } else if (mySpriteUp.image == sprites.castle.heroWalkSideLeft3) {
+    	
+    } else if (mySpriteUp.image == sprites.castle.heroWalkSideRight1) {
+    	
+    } else {
+    	
+    }
+})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
     sprite.destroy()
     PowerupType = randint(1, 2)
@@ -74,6 +105,26 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Assistant3, function (sprite, ot
     Obstacle.destroy()
     Poweruptwo_3.destroy()
 })
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySpriteUp.setImage(img`
+        . . . . f f f f f f . . . . . . 
+        . . . f 2 f e e e e f f . . . . 
+        . . f 2 2 2 f e e e e f f . . . 
+        . . f e e e e f f e e e f . . . 
+        . f e 2 2 2 2 e e f f f f . . . 
+        . f 2 e f f f f 2 2 2 e f . . . 
+        . f f f e e e f f f f f f f . . 
+        . f e e 4 4 f b e 4 4 e f f . . 
+        . . f e d d f 1 4 d 4 e e f . . 
+        . . . f d d d d 4 e e e f . . . 
+        . . . f e 4 4 4 e e f f . . . . 
+        . . . f 2 2 2 e d d 4 . . . . . 
+        . . . f 2 2 2 e d d e . . . . . 
+        . . . f 5 5 4 f e e f . . . . . 
+        . . . . f f f f f f . . . . . . 
+        . . . . . . f f f . . . . . . . 
+        `)
+})
 scene.onOverlapTile(SpriteKind.Enemy, sprites.dungeon.floorLight0, function (sprite, location) {
     sprite.destroy()
 })
@@ -100,6 +151,26 @@ info.onCountdownEnd(function () {
     Powerup.setPosition(randint(160, 0), 0)
     info.changeScoreBy(15)
     info.startCountdown(30)
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySpriteUp.setImage(img`
+        . . . . . . f f f f f f . . . . 
+        . . . . f f e e e e f 2 f . . . 
+        . . . f f e e e e f 2 2 2 f . . 
+        . . . f e e e f f e e e e f . . 
+        . . . f f f f e e 2 2 2 2 e f . 
+        . . . f e 2 2 2 f f f f e 2 f . 
+        . . f f f f f f f e e e f f f . 
+        . . f f e 4 4 e b f 4 4 e e f . 
+        . . f e e 4 d 4 1 f d d e f . . 
+        . . . f e e e 4 d d d d f . . . 
+        . . . . f f e e 4 4 4 e f . . . 
+        . . . . . 4 d d e 2 2 2 f . . . 
+        . . . . . e d d e 2 2 2 f . . . 
+        . . . . . f e e f 4 5 5 f . . . 
+        . . . . . . f f f f f f . . . . 
+        . . . . . . . f f f . . . . . . 
+        `)
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
@@ -136,6 +207,26 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant, function (sprite, othe
     Poweruptwo_2.setPosition(MySpriteX, MySpriteY)
     controller.moveSprite(Poweruptwo_2, 100, 100)
 })
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySpriteUp.setImage(img`
+        . . . . . . f f f f . . . . . . 
+        . . . . f f f 2 2 f f f . . . . 
+        . . . f f f 2 2 2 2 f f f . . . 
+        . . f f f e e e e e e f f f . . 
+        . . f f e 2 2 2 2 2 2 e e f . . 
+        . . f e 2 f f f f f f 2 e f . . 
+        . . f f f f e e e e f f f f . . 
+        . f f e f b f 4 4 f b f e f f . 
+        . f e e 4 1 f d d f 1 4 e e f . 
+        . . f e e d d d d d d e e f . . 
+        . . . f e e 4 4 4 4 e e f . . . 
+        . . e 4 f 2 2 2 2 2 2 f 4 e . . 
+        . . 4 d f 2 2 2 2 2 2 f d 4 . . 
+        . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . . f f . . f f . . . . . 
+        `)
+})
 let X = 0
 let Powerup: Sprite = null
 let PowerUp1: Sprite = null
@@ -144,9 +235,10 @@ let MySpriteY = 0
 let Poweruptwo_3: Sprite = null
 let Poweruptwo_2: Sprite = null
 let Obstacle: Sprite = null
+let mySpriteUp: Sprite = null
 let MySpriteX = 0
 MySpriteX = 80
-let mySprite = sprites.create(img`
+mySpriteUp = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f e e e e f f . . . . 
     . . . f e e e f f e e e f . . . 
@@ -164,9 +256,9 @@ let mySprite = sprites.create(img`
     . . . . . f f f f f f . . . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Player)
-controller.moveSprite(mySprite, 100, 100)
-mySprite.setPosition(MySpriteX, 100)
-scene.cameraFollowSprite(mySprite)
+controller.moveSprite(mySpriteUp, 100, 100)
+mySpriteUp.setPosition(MySpriteX, 100)
+scene.cameraFollowSprite(mySpriteUp)
 tiles.setTilemap(tilemap`level1`)
 let VY = 50
 let Time = 2000
@@ -268,6 +360,6 @@ game.onUpdateInterval(Time, function () {
     }
 })
 game.onUpdateInterval(100, function () {
-    MySpriteX = mySprite.x
-    MySpriteY = mySprite.y
+    MySpriteX = mySpriteUp.x
+    MySpriteY = mySpriteUp.y
 })
