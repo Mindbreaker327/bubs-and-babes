@@ -3,6 +3,7 @@ namespace SpriteKind {
     export const Health = SpriteKind.create()
     export const Assistant2 = SpriteKind.create()
     export const Assistant3 = SpriteKind.create()
+    export const Boost = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant2, function (sprite, otherSprite) {
     Obstacle.destroy()
@@ -133,42 +134,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             `, mySpriteUp, 0, -50)
     }
 })
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
-    sprite.destroy()
-    PowerupType = randint(1, 2)
-    if (PowerupType == 1) {
-        PowerUp1 = sprites.create(img`
-            2222222222222222222222
-            2222222222222222222222
-            2222222222222222222222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            222................222
-            2222222222222222222222
-            2222222222222222222222
-            2222222222222222222222
-            `, SpriteKind.Assistant)
-        PowerUp1.setPosition(MySpriteX, MySpriteY)
-        controller.moveSprite(PowerUp1, 100, 100)
-    } else if (PowerupType == 2) {
-        info.changeLifeBy(3)
-    }
-})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Assistant3, function (sprite, otherSprite) {
     Obstacle.destroy()
     Poweruptwo_3.destroy()
@@ -214,11 +179,47 @@ info.onCountdownEnd(function () {
         . c d d d d d d 5 5 5 5 5 d b . 
         . . c b d d d d d 5 5 5 b b . . 
         . . . c c c c c c c c b b . . . 
-        `, SpriteKind.Projectile)
+        `, SpriteKind.Boost)
     Powerup.setVelocity(0, 50)
     Powerup.setPosition(randint(160, 0), 0)
     info.changeScoreBy(15)
     info.startCountdown(30)
+})
+sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSprite) {
+    sprite.destroy()
+    PowerupType = randint(1, 2)
+    if (PowerupType == 1) {
+        PowerUp1 = sprites.create(img`
+            2222222222222222222222
+            2222222222222222222222
+            2222222222222222222222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            222................222
+            2222222222222222222222
+            2222222222222222222222
+            2222222222222222222222
+            `, SpriteKind.Assistant)
+        PowerUp1.setPosition(MySpriteX, MySpriteY)
+        controller.moveSprite(PowerUp1, 100, 100)
+    } else if (PowerupType == 2) {
+        info.changeLifeBy(3)
+    }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     mySpriteUp.setImage(img`
@@ -295,10 +296,15 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . f f . . f f . . . . . 
         `)
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprite.destroy()
+    otherSprite.destroy()
+    info.changeScoreBy(1)
+})
 let X = 0
-let Powerup: Sprite = null
 let PowerUp1: Sprite = null
 let PowerupType = 0
+let Powerup: Sprite = null
 let projectile: Sprite = null
 let MySpriteY = 0
 let Poweruptwo_3: Sprite = null
