@@ -279,9 +279,9 @@ controller.moveSprite(mySpriteUp, 100, 100)
 mySpriteUp.setPosition(MySpriteX, 100)
 scene.cameraFollowSprite(mySpriteUp)
 tiles.setTilemap(tilemap`level1`)
-let VY = 50
+let VY = 25
 let Time = 2000
-let VX = 50
+let VX = 25
 info.setLife(3)
 info.setScore(0)
 info.startCountdown(30)
