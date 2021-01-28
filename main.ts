@@ -55,26 +55,6 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . f f . . f f . . . . . 
         `)
 })
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    projectile = sprites.createProjectileFromSprite(img`
-        ..........................
-        ..........................
-        ..........................
-        11111111111111111111111111
-        12221222122221222122212221
-        12121211111211211121111211
-        12221222111211222121111211
-        12211211121211211121111211
-        12121222122211222122211211
-        11111111111111111111111111
-        ..........................
-        ..........................
-        ..........................
-        ..........................
-        ..........................
-        ..........................
-        `, mySpriteUp, 0, 50)
-})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
         ..........................
@@ -93,7 +73,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         ..........................
         ..........................
         ..........................
-        `, mySpriteUp, 0, -50)
+        `, mySpriteUp, -50, -50)
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     mySpriteUp.setImage(img`
@@ -205,6 +185,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     sprite.destroy()
+    mySpriteUp.startEffect(effects.fire, 2000)
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant, function (sprite, otherSprite) {
     Obstacle.destroy()
@@ -302,6 +283,10 @@ let VX = 50
 info.setLife(3)
 info.setScore(0)
 info.startCountdown(30)
+game.onUpdateInterval(25, function () {
+    MySpriteX = mySpriteUp.x
+    MySpriteY = mySpriteUp.y
+})
 game.onUpdateInterval(1000, function () {
     VY += 1
     Time += -1
@@ -394,8 +379,4 @@ game.onUpdateInterval(Time, function () {
         Obstacle.setPosition(30, randint(140, 20))
         Obstacle.setVelocity(VX, 0)
     }
-})
-game.onUpdateInterval(100, function () {
-    MySpriteX = mySpriteUp.x
-    MySpriteY = mySpriteUp.y
 })
