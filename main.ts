@@ -277,11 +277,12 @@ info.onCountdownEnd(function () {
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant3, function (sprite, otherSprite) {
     sprite.destroy()
     Poweruptwo_3.destroy()
+    Shield += -1
 })
 sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSprite) {
     sprite.destroy()
     PowerupType = randint(1, 2)
-    if (PowerupType == 1) {
+    if (PowerupType == 1 && Shield == 0) {
         PowerUp1 = sprites.create(img`
             22222222222222222222222
             22222222222222222222222
@@ -311,6 +312,7 @@ sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSp
             `, SpriteKind.Assistant)
         PowerUp1.setPosition(MySpriteX, MySpriteY)
         controller.moveSprite(PowerUp1, 100, 100)
+        Shield += 1
     } else if (PowerupType == 2) {
         info.changeLifeBy(3)
     }
@@ -556,6 +558,7 @@ let Poweruptwo_3: Sprite = null
 let Poweruptwo_2: Sprite = null
 let Obstacle: Sprite = null
 let Limit = 0
+let Shield = 0
 let mySpriteUp: Sprite = null
 let MySpriteX = 0
 MySpriteX = 95
@@ -581,6 +584,7 @@ controller.moveSprite(mySpriteUp, 100, 100)
 mySpriteUp.setPosition(MySpriteX, 80)
 mySpriteUp.setStayInScreen(true)
 tiles.setTilemap(tilemap`level1`)
+Shield = 0
 let VY = 25
 let Time = 2000
 let VX = 25
