@@ -36,9 +36,6 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant2, function (sprite, oth
     Poweruptwo_3.setPosition(MySpriteX, MySpriteY)
     controller.moveSprite(Poweruptwo_3, 100, 100)
 })
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorLight0, function (sprite, location) {
-	
-})
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     mySpriteUp.setImage(img`
         . . . . . . f f f f . . . . . . 
@@ -134,24 +131,27 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    projectile = sprites.createProjectileFromSprite(img`
-        ..........................
-        ..........................
-        ..........................
-        11111111111111111111111111
-        12221222122221222122212221
-        12121211111211211121111211
-        12221222111211222121111211
-        12211211121211211121111211
-        12121222122211222122211211
-        11111111111111111111111111
-        ..........................
-        ..........................
-        ..........................
-        ..........................
-        ..........................
-        ..........................
-        `, mySpriteUp, 0, -50)
+    if (Limit < 10) {
+        projectile = sprites.createProjectileFromSprite(img`
+            ..........................
+            ..........................
+            ..........................
+            11111111111111111111111111
+            12221222122221222122212221
+            12121211111211211121111211
+            12221222111211222121111211
+            12211211121211211121111211
+            12121222122211222122211211
+            11111111111111111111111111
+            ..........................
+            ..........................
+            ..........................
+            ..........................
+            ..........................
+            ..........................
+            `, mySpriteUp, 0, -50)
+        Limit += 1
+    }
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     mySpriteUp.setImage(img`
@@ -541,8 +541,11 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy()
-    otherSprite.destroy()
     info.changeScoreBy(1)
+    otherSprite.setVelocity(0, -50)
+    otherSprite.startEffect(effects.fountain, 1000)
+    pause(1000)
+    otherSprite.destroy()
 })
 let PowerUp1: Sprite = null
 let PowerupType = 0
@@ -552,6 +555,7 @@ let MySpriteY = 0
 let Poweruptwo_3: Sprite = null
 let Poweruptwo_2: Sprite = null
 let Obstacle: Sprite = null
+let Limit = 0
 let mySpriteUp: Sprite = null
 let MySpriteX = 0
 MySpriteX = 95
@@ -580,6 +584,7 @@ tiles.setTilemap(tilemap`level1`)
 let VY = 25
 let Time = 2000
 let VX = 25
+Limit = 0
 info.setLife(3)
 info.setScore(0)
 info.startCountdown(30)
@@ -591,6 +596,9 @@ game.onUpdateInterval(1000, function () {
     VY += 1
     Time += -1
     VX += 1
+})
+game.onUpdateInterval(1500, function () {
+    Limit += -1
 })
 game.onUpdateInterval(Time, function () {
     Obstacle = sprites.create(img`
