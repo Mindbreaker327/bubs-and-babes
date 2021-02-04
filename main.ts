@@ -314,7 +314,11 @@ sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSp
         controller.moveSprite(PowerUp1, 100, 100)
         Shield += 1
     } else if (PowerupType == 2) {
-        info.changeLifeBy(3)
+        if (Life == 2) {
+            info.changeLifeBy(1)
+        } else if (Life == 1) {
+            info.changeLifeBy(2)
+        }
     }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -557,6 +561,7 @@ let MySpriteY = 0
 let Poweruptwo_3: Sprite = null
 let Poweruptwo_2: Sprite = null
 let Obstacle: Sprite = null
+let Life = 0
 let Limit = 0
 let Shield = 0
 let mySpriteUp: Sprite = null
@@ -589,7 +594,8 @@ let VY = 25
 let Time = 2000
 let VX = 25
 Limit = 0
-info.setLife(3)
+Life = 3
+info.setLife(Life)
 info.setScore(0)
 info.startCountdown(30)
 game.onUpdateInterval(25, function () {
