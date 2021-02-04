@@ -280,7 +280,46 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant3, function (sprite, oth
     Shield += -1
 })
 sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSprite) {
-    Powerups()
+    Powerup.destroy()
+    PowerupType = randint(1, 2)
+    if (PowerupType == 1 && Shield == 0) {
+        PowerUp1 = sprites.create(img`
+            .....8888888888888.....
+            ....888888888888888....
+            ...88888888888888888...
+            ..8888............888..
+            .8888..............888.
+            8888................888
+            888.................888
+            888.................888
+            888.................888
+            888.................888
+            888.................888
+            888.................888
+            888.................888
+            888.................888
+            888.................888
+            888.................888
+            888.................888
+            888.................888
+            888.................888
+            8888...............8888
+            .8888.............8888.
+            ..8888...........8888..
+            ...88888888888888888...
+            ....888888888888888....
+            .....8888888888888.....
+            `, SpriteKind.Assistant)
+        PowerUp1.setPosition(MySpriteX, MySpriteY)
+        controller.moveSprite(PowerUp1, 100, 100)
+        Shield += 1
+    } else if (PowerupType == 2) {
+        if (Life == 2) {
+            info.changeLifeBy(1)
+        } else if (Life == 1) {
+            info.changeLifeBy(2)
+        }
+    }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     mySpriteUp.setImage(img`
@@ -506,50 +545,6 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     false
     )
 })
-function Powerups () {
-    Powerup.destroy()
-    PowerupType = randint(1, 2)
-    if (PowerupType == 1 && Shield == 0) {
-        PowerUp1 = sprites.create(img`
-            .....8888888888888.....
-            ....888888888888888....
-            ...88888888888888888...
-            ..8888............888..
-            .8888..............888.
-            8888................888
-            888.................888
-            888.................888
-            888.................888
-            888.................888
-            888.................888
-            888.................888
-            888.................888
-            888.................888
-            888.................888
-            888.................888
-            888.................888
-            888.................888
-            888.................888
-            8888...............8888
-            .8888.............8888.
-            ..8888...........8888..
-            ...88888888888888888...
-            ....888888888888888....
-            .....8888888888888.....
-            `, SpriteKind.Assistant)
-        PowerUp1.setPosition(MySpriteX, MySpriteY)
-        controller.moveSprite(PowerUp1, 100, 100)
-        Shield += 1
-    } else if (PowerupType == 2) {
-        if (Life == 2) {
-            info.changeLifeBy(1)
-        } else if (Life == 1) {
-            info.changeLifeBy(2)
-        } else if (Life == 3) {
-            Powerups()
-        }
-    }
-}
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy()
     info.changeScoreBy(1)
@@ -558,8 +553,8 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     pause(1000)
     otherSprite.destroy()
 })
-let PowerupType = 0
 let PowerUp1: Sprite = null
+let PowerupType = 0
 let Powerup: Sprite = null
 let projectile: Sprite = null
 let MySpriteY = 0
