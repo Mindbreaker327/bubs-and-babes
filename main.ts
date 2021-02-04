@@ -692,6 +692,9 @@ let Limit = 0
 let Shield = 0
 let mySpriteUp: Sprite = null
 let MySpriteX = 0
+tiles.setTilemap(tilemap`level1`)
+game.showLongText("Bubs and the babes.", DialogLayout.Top)
+game.showLongText("Based on a true story.", DialogLayout.Bottom)
 MySpriteX = 95
 mySpriteUp = sprites.create(img`
     . . . . . . f f f f . . . . . . 
@@ -714,7 +717,6 @@ mySpriteUp = sprites.create(img`
 controller.moveSprite(mySpriteUp, 100, 100)
 mySpriteUp.setPosition(MySpriteX, 80)
 mySpriteUp.setStayInScreen(true)
-tiles.setTilemap(tilemap`level1`)
 Shield = 0
 let VY = 25
 let Time = 2000
