@@ -4,6 +4,7 @@ namespace SpriteKind {
     export const Assistant2 = SpriteKind.create()
     export const Assistant3 = SpriteKind.create()
     export const Boost = SpriteKind.create()
+    export const Parent = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant2, function (sprite, otherSprite) {
     Obstacle.destroy()
@@ -319,6 +320,36 @@ sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSp
         } else if (Life == 1) {
             info.changeLifeBy(2)
         }
+    } else if (PowerupType == 3) {
+        game.showLongText("MRS. BEATTY!!", DialogLayout.Bottom)
+        Mrs_Beatty = sprites.create(img`
+            . . . . . f f f f . . . . . 
+            . . . f f 5 5 5 5 f f . . . 
+            . . f 5 5 5 5 5 5 5 5 f . . 
+            . f 5 5 5 5 5 5 5 5 5 5 f . 
+            . f 5 5 5 d b b d 5 5 5 f . 
+            f 5 5 5 b 4 4 4 4 b 5 5 5 f 
+            f 5 5 c c 4 4 4 4 c c 5 5 f 
+            f b b f b f 4 4 f b f b b f 
+            f b b 4 1 f d d f 1 4 b b f 
+            . f b f d d d d d d f b f . 
+            . f e f e 4 4 4 4 e f e f . 
+            . e 4 f 6 9 9 9 9 6 f 4 e . 
+            . 4 d c 9 9 9 9 9 9 c d 4 . 
+            . 4 f b 3 b 3 b 3 b b f 4 . 
+            . . f f 3 b 3 b 3 3 f f . . 
+            . . . . f f b b f f . . . . 
+            `, SpriteKind.Parent)
+        pause(1000)
+        for (let index = 0; index < 10; index++) {
+            pause(500)
+            Obstacle.setVelocity(0, 0)
+            Obstacle.startEffect(effects.fire)
+            Obstacle.destroy()
+            info.changeScoreBy(1)
+        }
+        pause(1000)
+        Mrs_Beatty.destroy()
     }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -553,6 +584,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     pause(1000)
     otherSprite.destroy()
 })
+let Mrs_Beatty: Sprite = null
 let PowerUp1: Sprite = null
 let PowerupType = 0
 let Powerup: Sprite = null
