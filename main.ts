@@ -5,6 +5,7 @@ namespace SpriteKind {
     export const Assistant3 = SpriteKind.create()
     export const Boost = SpriteKind.create()
     export const Parent = SpriteKind.create()
+    export const Ally = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant2, function (sprite, otherSprite) {
     Obstacle.destroy()
@@ -280,6 +281,9 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant3, function (sprite, oth
     Poweruptwo_3.destroy()
     Shield += -1
 })
+scene.onHitWall(SpriteKind.Ally, function (sprite, location) {
+    sprite.destroy()
+})
 sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSprite) {
     Powerup.destroy()
     PowerupType = randint(1, 2)
@@ -350,7 +354,96 @@ sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSp
         }
         pause(1000)
         Mrs_Beatty.destroy()
+    } else if (PowerupType == 4) {
+        game.showLongText("Here comes the Boys!", DialogLayout.Bottom)
+        for (let index = 0; index < 15; index++) {
+            pause(500)
+            TheBoys = sprites.create(img`
+                . . . . f f f f . . . . 
+                . . f f e e e e f f . . 
+                . f e e e e e e e f f . 
+                f f e f e e e e e e f f 
+                f f f e e e e e e e e f 
+                f f f e e e e e e f e f 
+                f f f f e e e e f f f f 
+                f f f f f f f f f f f f 
+                f f f f f f f f f f f f 
+                . f f f f f f f f f f . 
+                . e f f f f f f f f e . 
+                e 4 f b b b b b b f 4 e 
+                4 d f d d d d d d c d 4 
+                4 4 f 6 6 6 6 6 6 f 4 4 
+                . . . f f f f f f . . . 
+                . . . f f . . f f . . . 
+                `, SpriteKind.Ally)
+            TheBoys.setPosition(randint(10, 150), 120)
+            TheBoys.setVelocity(0, -50)
+            animation.runImageAnimation(
+            TheBoys,
+            [img`
+                . . . . f f f f . . . . 
+                . . f f e e e e f f . . 
+                . f e e e e e e e f f . 
+                f f e f e e e e e e f f 
+                f f f e e e e e e e e f 
+                f f f e e e e e e f e f 
+                f f f f e e e e f f f f 
+                f f f f f f f f f f f f 
+                f f f f f f f f f f f f 
+                . f f f f f f f f f f . 
+                . e f f f f f f f f e . 
+                e 4 f b b b b b b f 4 e 
+                4 d f d d d d d d c d 4 
+                4 4 f 6 6 6 6 6 6 f 4 4 
+                . . . f f f f f f . . . 
+                . . . f f . . f f . . . 
+                `,img`
+                . . . . . . . . . . . . 
+                . . . . f f f f . . . . 
+                . . f f e e e e f f . . 
+                . f e e e e e e e f f . 
+                f e e f e e e e e e f f 
+                f f f e e e e e e e e f 
+                f f e e e e e e e f e f 
+                f f f e e e e f f f f f 
+                f f f f f f f f f f f f 
+                f f f f f f f f f f f f 
+                . f f f f f f f f f f . 
+                . e f f f f f f f f e . 
+                . 4 f b b b b b f e 4 e 
+                . 4 f d d d d d e d d 4 
+                . e f f f f f f e e 4 . 
+                . . f f f . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . 
+                . . . . f f f f . . . . 
+                . . f f e e e e f f . . 
+                . f e e e e e e e f f . 
+                f f e f e e e e e e f f 
+                f f f e e e e e e e e f 
+                f f f f e e e e e f e f 
+                f f f f f e e e e f f f 
+                f f f f f f f f f f f f 
+                f f f f f f f f f f f f 
+                . f f f f f f f f f f . 
+                . e f f f f f f f f e . 
+                e 4 e f b b b b b f 4 . 
+                4 d d e d d d d d f 4 . 
+                . 4 e e f f f f f f e . 
+                . . . . . . . f f f . . 
+                `],
+            100,
+            true
+            )
+        }
     }
+})
+sprites.onOverlap(SpriteKind.Ally, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.setVelocity(0, -50)
+    otherSprite.startEffect(effects.fountain, 1000)
+    pause(1000)
+    otherSprite.destroy()
+    info.changeScoreBy(1)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     mySpriteUp.setImage(img`
@@ -584,6 +677,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     pause(1000)
     otherSprite.destroy()
 })
+let TheBoys: Sprite = null
 let Mrs_Beatty: Sprite = null
 let PowerUp1: Sprite = null
 let PowerupType = 0
