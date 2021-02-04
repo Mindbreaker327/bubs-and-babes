@@ -638,7 +638,7 @@ game.onUpdateInterval(Time, function () {
         . f a a f b f d d f b f a a f . 
         . f a a d 1 f 4 4 f 1 d a a f . 
         f f a a f 4 4 4 4 4 4 f a a f f 
-        f a a f f f d d d d f f f a a f 
+        f a a f f f 7 7 7 7 f f f a a f 
         . f d d f b d d d d b f d d f . 
         . . d 4 c d d d d d d c 4 d . . 
         . . d f b d b d b d b b f d . . 
@@ -672,7 +672,7 @@ game.onUpdateInterval(Time, function () {
         . f a a f b f d d f b f a a f . 
         . f a a d 1 f 4 4 f 1 d a a f . 
         f f a a f 4 4 4 4 4 4 f a a f f 
-        f a a f f f d d d d f f f a a f 
+        f a a f f f 7 7 7 7 f f f a a f 
         . f d d f b d d d d b f d d f . 
         . . d 4 c d d d d d d c 4 d . . 
         . . d f b d b d b d b b f d . . 
