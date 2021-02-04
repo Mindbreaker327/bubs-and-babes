@@ -93,24 +93,6 @@ namespace myImages {
 . . . . f f f f f f . . . . . . 
 . . . . . . f f f . . . . . . . 
 `;
-            case "image41":return img`
-. . . . . f f 4 4 f f . . . . . 
-. . . . f 5 4 5 5 4 5 f . . . . 
-. . . f e 4 5 5 5 5 4 e f . . . 
-. . f b 3 e 4 4 4 4 e 3 b f . . 
-. . f 3 3 3 3 3 3 3 3 3 3 f . . 
-. f 3 3 e b 3 e e 3 b e 3 3 f . 
-. f 3 3 f f e e e e f f 3 3 f . 
-. f b b f b f e e f b f b b f . 
-. f b b e 1 f 4 4 f 1 e b b f . 
-f f b b f 4 4 4 4 4 4 f b b f f 
-f b b f f f e e e e f f f b b f 
-. f e e f b d d d d b f e e f . 
-. . e 4 c d d d d d d c 4 e . . 
-. . e f b d b d b d b b f e . . 
-. . . f f 1 d 1 d 1 d f f . . . 
-. . . . . f f b b f f . . . . . 
-`;
             case "image15":return img`
 2222222222222222222222
 2222222222222222222222
@@ -224,6 +206,24 @@ f b b f f f e e e e f f f b b f
 . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
 . . . . . f f f f f f . . . . . 
 . . . . . f f . . f f . . . . . 
+`;
+            case "image41":return img`
+. . . . . f f 8 8 f f . . . . . 
+. . . . f 8 8 8 8 8 8 f . . . . 
+. . . f 8 8 8 8 8 8 8 8 f . . . 
+. . f a 8 8 8 8 8 8 8 8 a f . . 
+. . f 8 8 8 8 8 8 8 8 8 8 f . . 
+. f 8 8 d b 3 d d 3 b d 8 8 f . 
+. f 8 8 f f d d d d f f 8 8 f . 
+. f a a f b f d d f b f a a f . 
+. f a a d 1 f 4 4 f 1 d a a f . 
+f f a a f 4 4 4 4 4 4 f a a f f 
+f a a f f f d d d d f f f a a f 
+. f d d f b 7 7 7 7 b f d d f . 
+. . d 4 c 7 7 7 7 7 7 c 4 d . . 
+. . d f b 7 b 7 b 7 b b f d . . 
+. . . f f 1 d 1 d 1 d f f . . . 
+. . . . . f f b b f f . . . . . 
 `;
         }
         return null;
