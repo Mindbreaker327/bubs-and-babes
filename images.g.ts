@@ -3,24 +3,6 @@ namespace myImages {
 
     helpers._registerFactory("image", function(name: string) {
         switch(helpers.stringTrim(name)) {
-            case "image29":return img`
-. 4 4 4 4 4 4 4 4 4 4 4 4 4 4 . 
-4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
-4 5 c 5 5 5 5 5 5 5 5 5 5 c 5 f 
-4 5 5 5 5 1 1 1 1 1 5 5 5 5 5 f 
-4 5 5 5 1 1 f f f 1 1 5 5 5 5 f 
-4 5 5 5 1 1 f 5 5 1 1 f 5 5 5 f 
-4 5 5 5 1 1 f 5 5 1 1 f 5 5 5 f 
-4 5 5 5 5 f f 5 1 1 1 f 5 5 5 f 
-4 5 5 5 5 5 5 1 1 f f f 5 5 5 f 
-4 5 5 5 5 5 5 1 1 f 5 5 5 5 5 f 
-4 5 5 5 5 5 5 5 f f 5 5 5 5 5 f 
-4 5 5 5 5 5 5 1 1 5 5 5 5 5 5 f 
-4 5 5 5 5 5 5 1 1 f 5 5 5 5 5 f 
-4 5 c 5 5 5 5 5 f f 5 5 5 c 5 f 
-4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 f 
-. f f f f f f f f f f f f f f . 
-`;
             case "image3":return img`
 ..........................
 ..........................
@@ -460,6 +442,24 @@ e 4 f b b b b b b f 4 e
 . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
 . . . . . f f f f f f . . . . . 
 . . . . . f f . . f f . . . . . 
+`;
+            case "image29":return img`
+. . e f e e e e e e e e e e e e 
+. f e f e e e e e e e e e e e e 
+. f e f e e e e e 5 5 e e e e e 
+. f e f e e e e e 5 5 e e e e e 
+. f e f e e 5 5 5 5 5 5 5 5 e e 
+. f e f e e 5 5 5 5 5 5 5 5 e e 
+. f e f e e e e e 5 5 e e e e e 
+. f e f e e e e e 5 5 e e e e e 
+. f e f e e e e e 5 5 e e e e e 
+. f e f e e e e e 5 5 e e e e e 
+. f e f e e e e e 5 5 e e e e e 
+. f e f e e e e e e e e e e e e 
+. f e e e e e e e e e e e e e e 
+. f e d d d d d d d d d d d d f 
+. f e d 1 1 1 1 1 1 1 1 2 2 1 f 
+. . e e e e e e e e e e e e e e 
 `;
         }
         return null;
