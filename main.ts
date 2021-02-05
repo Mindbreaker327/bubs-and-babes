@@ -1184,18 +1184,18 @@ let Shield = 0
 let mySpriteUp: Sprite = null
 let MySpriteX = 0
 tiles.setTilemap(tilemap`level1`)
-game.showLongText("Bubs and the babes.", DialogLayout.Top)
+game.showLongText("Bubs and the Babes Brought to you by Virtue Games", DialogLayout.Top)
 game.showLongText("Based on a true story. By Virtue Games.", DialogLayout.Bottom)
 MySpriteX = 95
 mySpriteUp = sprites.create(img`
     . . . . . . f f f f . . . . . . 
-    . . . . f f f 2 2 f f f . . . . 
-    . . . f f f 2 2 2 2 f f f . . . 
-    . . f f f 5 5 5 5 5 5 f f f . . 
-    . . f f 5 2 2 2 2 2 2 5 5 f . . 
-    . . f 5 2 f f f f f f 2 5 f . . 
-    . . f f f f 5 5 5 5 f f f f . . 
-    . f f f f b f 4 4 f b f f f f . 
+    . . . . f f 5 2 2 5 f f . . . . 
+    . . . f f 5 2 2 2 2 5 f f . . . 
+    . . f f 5 5 5 5 5 5 5 5 f f . . 
+    . . f 5 5 2 2 2 2 2 2 5 5 f . . 
+    . . f 5 2 5 5 5 5 5 5 2 5 f . . 
+    . . f 5 d d d d d d d d 5 f . . 
+    . f f 5 d b f 4 4 f b d 5 f f . 
     . f f f 4 1 f d d f 1 4 f f f . 
     . . f f d d d d d d d d f f . . 
     . . . f d d 4 4 4 4 d d f . . . 
