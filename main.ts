@@ -936,12 +936,12 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     mySpriteUp.setImage(img`
         . . . . . . f f f f . . . . . . 
         . . . . f f f 2 2 f f f . . . . 
-        . . . f f f 2 2 2 2 f f f . . . 
-        . . f f f 5 5 5 5 5 5 f f f . . 
-        . . f f 5 2 2 2 2 2 2 5 5 f . . 
-        . . f 5 2 f f f f f f 2 5 f . . 
-        . . f f f f 5 5 5 5 f f f f . . 
-        . f f f f b f 4 4 f b f f f f . 
+        . . . f f 5 2 2 2 2 5 f f . . . 
+        . . f f 5 5 5 5 5 5 5 5 f f . . 
+        . . f 5 5 2 2 2 2 2 2 5 5 f . . 
+        . . f 5 2 5 5 5 5 5 5 2 5 f . . 
+        . . f 5 5 5 5 5 5 5 5 5 5 f . . 
+        . f f f d b f 4 4 f b d f f f . 
         . f f f 4 1 f d d f 1 4 f f f . 
         . . f f d d d d d d d d f f . . 
         . . . f d d 4 4 4 4 d d f . . . 
@@ -956,12 +956,12 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     [img`
         . . . . . . f f f f . . . . . . 
         . . . . f f f 2 2 f f f . . . . 
-        . . . f f f 2 2 2 2 f f f . . . 
-        . . f f f 5 5 5 5 5 5 f f f . . 
-        . . f f 5 2 2 2 2 2 2 5 5 f . . 
-        . . f 5 2 f f f f f f 2 5 f . . 
-        . . f f f f 5 5 5 5 f f f f . . 
-        . f f f f b f 4 4 f b f f f f . 
+        . . . f f 5 2 2 2 2 5 f f . . . 
+        . . f f 5 5 5 5 5 5 5 5 f f . . 
+        . . f 5 5 2 2 2 2 2 2 5 5 f . . 
+        . . f 5 2 5 5 5 5 5 5 2 5 f . . 
+        . . f 5 5 d d d d d d 5 5 f . . 
+        . f f f d b f 4 4 f b d f f f . 
         . f f f 4 1 f d d f 1 4 f f f . 
         . . f f d d d d d d d d f f . . 
         . . . f d d 4 4 4 4 d d f . . . 
@@ -974,13 +974,13 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . . 
         . . . . . . f f f f . . . . . . 
         . . . . f f f 2 2 f f f . . . . 
-        . . . f f f 2 2 2 2 f f f . . . 
-        . . f f f 5 5 5 5 5 5 f f f . . 
-        . . f f 5 2 2 2 2 2 2 5 5 f . . 
-        . f f 5 2 f f f f f f 2 5 f f . 
-        . f f f f f 5 5 5 5 f f f f f . 
-        . . f 5 f b f 4 4 f b f 5 f . . 
-        . . f 5 4 1 f d d f 1 4 5 f . . 
+        . . . f f 5 2 2 2 2 5 f f . . . 
+        . . f f 5 5 5 5 5 5 5 5 f f . . 
+        . . f 5 5 2 2 2 2 2 2 5 5 f . . 
+        . f f 5 2 5 5 5 5 5 5 2 5 f f . 
+        . f f 5 5 d d d d d d 5 5 f f . 
+        . . f f d b f 4 4 f b d f f . . 
+        . . f f 4 1 f d d f 1 4 f f . . 
         . . . f e 4 d d d d 4 e f e . . 
         . . f e f 2 2 2 2 e d d 4 e . . 
         . . e 4 f 2 2 2 2 e d d e . . . 
@@ -990,12 +990,12 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         `,img`
         . . . . . . f f f f . . . . . . 
         . . . . f f f 2 2 f f f . . . . 
-        . . . f f f 2 2 2 2 f f f . . . 
-        . . f f f 5 5 5 5 5 5 f f f . . 
-        . . f f 5 2 2 2 2 2 2 5 5 f . . 
-        . . f 5 2 f f f f f f 2 5 f . . 
-        . . f f f f 5 5 5 5 f f f f . . 
-        . f f f f b f 4 4 f b f f f f . 
+        . . . f f 5 2 2 2 2 5 f f . . . 
+        . . f f 5 5 5 5 5 5 5 5 f f . . 
+        . . f 5 5 2 2 2 2 2 2 5 5 f . . 
+        . . f 5 2 5 5 5 5 5 5 2 5 f . . 
+        . . f 5 5 d d d d d d 5 5 f . . 
+        . f f f d b f 4 4 f b d f f f . 
         . f f f 4 1 f d d f 1 4 f f f . 
         . . f f d d d d d d d d f f . . 
         . . . f d d 4 4 4 4 d d f . . . 
@@ -1008,13 +1008,13 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . . 
         . . . . . . f f f f . . . . . . 
         . . . . f f f 2 2 f f f . . . . 
-        . . . f f f 2 2 2 2 f f f . . . 
-        . . f f f 5 5 5 5 5 5 f f f . . 
-        . . f 5 5 2 2 2 2 2 2 5 f f . . 
-        . f f 5 2 f f f f f f 2 5 f f . 
-        . f f f f f 5 5 5 5 f f f f f . 
-        . . f 5 f b f 4 4 f b f 5 f . . 
-        . . f 5 4 1 f d d f 1 4 5 f . . 
+        . . . f f 5 2 2 2 2 5 f f . . . 
+        . . f f 5 5 5 5 5 5 5 5 f f . . 
+        . . f 5 5 2 2 2 2 2 2 5 5 f . . 
+        . f f 5 2 5 5 5 5 5 5 2 5 f f . 
+        . f f 5 5 d d d d d d 5 5 f f . 
+        . . f f d b f 4 4 f b d f f . . 
+        . . f f 4 1 f d d f 1 4 f f . . 
         . . e f e 4 d d d d 4 e f . . . 
         . . e 4 d d e 2 2 2 2 f e f . . 
         . . . e d d e 2 2 2 2 f 4 e . . 
