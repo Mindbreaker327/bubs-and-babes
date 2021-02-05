@@ -1185,7 +1185,7 @@ let mySpriteUp: Sprite = null
 let MySpriteX = 0
 tiles.setTilemap(tilemap`level1`)
 game.showLongText("Bubs and the Babes Brought to you by Virtue Games", DialogLayout.Top)
-game.showLongText("Based on a true story. By Virtue Games.", DialogLayout.Bottom)
+game.showLongText("Based on a true story. ", DialogLayout.Bottom)
 MySpriteX = 95
 mySpriteUp = sprites.create(img`
     . . . . . . f f f f . . . . . . 
