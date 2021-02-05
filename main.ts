@@ -1162,7 +1162,7 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy()
-    info.changeScoreBy(1)
+    info.changeScoreBy(50)
     otherSprite.setVelocity(0, -50)
     otherSprite.startEffect(effects.fountain, 1000)
     pause(1000)
