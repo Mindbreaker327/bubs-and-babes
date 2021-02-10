@@ -1229,6 +1229,28 @@ game.onUpdateInterval(1000, function () {
 game.onUpdateInterval(1500, function () {
     Limit += -1
 })
+forever(function () {
+    if (Obstacle.vy < 0) {
+        Obstacle.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `)
+    }
+})
 game.onUpdateInterval(Time, function () {
     Obstacle = sprites.create(img`
         . . . . . f f 8 8 f f . . . . . 
