@@ -6,6 +6,8 @@ namespace SpriteKind {
     export const Boost = SpriteKind.create()
     export const Parent = SpriteKind.create()
     export const Ally = SpriteKind.create()
+    export const Yes = SpriteKind.create()
+    export const No = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant2, function (sprite, otherSprite) {
     Obstacle.destroy()
@@ -36,7 +38,6 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant2, function (sprite, oth
         .....................
         `, SpriteKind.Assistant3)
     Poweruptwo_3.setPosition(MySpriteX, MySpriteY)
-    controller.moveSprite(Poweruptwo_3, 100, 100)
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     mySpriteUp.setImage(img`
@@ -266,6 +267,108 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         )
     }
 })
+function Enemies () {
+    Obstacle = sprites.create(img`
+        . . . . . f f 8 8 f f . . . . . 
+        . . . . f 8 8 8 8 8 8 f . . . . 
+        . . . f 8 8 8 8 8 8 8 8 f . . . 
+        . . f a 8 8 8 8 8 8 8 8 a f . . 
+        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+        . f 8 8 d b 3 d d 3 b d 8 8 f . 
+        . f 8 8 f f d d d d f f 8 8 f . 
+        . f a a f b f d d f b f a a f . 
+        . f a a d 1 f 4 4 f 1 d a a f . 
+        f f a a f 4 4 4 4 4 4 f a a f f 
+        f a a f f f d d d d f f f a a f 
+        . f d d f b 7 7 7 7 b f d d f . 
+        . . d 4 c 7 7 7 7 7 7 c 4 d . . 
+        . . d f b 7 b 7 b 7 b b f d . . 
+        . . . f f 1 d 1 d 1 d f f . . . 
+        . . . . . f f b b f f . . . . . 
+        `, SpriteKind.Enemy)
+    Obstacle.setPosition(randint(140, 20), 10)
+    Obstacle.setVelocity(0, VY)
+    animation.runImageAnimation(
+    Obstacle,
+    [img`
+        . . . . . f f 8 8 f f . . . . . 
+        . . . . f 8 8 8 8 8 8 f . . . . 
+        . . . f 8 8 8 8 8 8 8 8 f . . . 
+        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+        . f 8 8 d b 8 d d 8 b d 8 8 f . 
+        . f 8 8 f f d d d d f f 8 8 f . 
+        . f a a f b f d d f b f a a f . 
+        . f a a d 1 f 4 4 f 1 d a a f . 
+        f f a a f 4 4 4 4 4 4 f a a f f 
+        f a a f f f 7 7 7 7 f f f a a f 
+        . f d d f b d d d d b f d d f . 
+        . . d 4 c d d d d d d c 4 d . . 
+        . . d f b d b d b d b b f d . . 
+        . . . f f 1 d 1 d 1 d f f . . . 
+        . . . . . f f b b f f . . . . . 
+        `,img`
+        . . . . . . . f f . . . . . . . 
+        . . . . . f f 8 8 f f . . . . . 
+        . . . . f 8 8 8 8 8 8 f . . . . 
+        . . . f 8 8 8 8 8 8 8 8 f . . . 
+        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+        . f 8 8 8 8 8 8 8 8 8 8 8 8 f . 
+        . f 8 8 d b 8 d d 8 b d 8 8 f . 
+        . f a 8 f f d d d d f f 8 a f . 
+        f f a a f b f d d f b f a a f f 
+        f a a a d 1 f 4 4 f 1 d a a a f 
+        . f a a d d 4 4 4 4 4 f a a f . 
+        . . f 4 4 4 d d d d b f d f . . 
+        . . f d 4 4 d d d d d c 4 d . . 
+        . . . f d d d d b d b b f d . . 
+        . . . f f 1 d 1 d 1 1 f f . . . 
+        . . . . . f f f b b f . . . . . 
+        `,img`
+        . . . . . f f 8 8 f f . . . . . 
+        . . . . f 8 8 8 8 8 8 f . . . . 
+        . . . f 8 8 8 8 8 8 8 8 f . . . 
+        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+        . f 8 8 d b 8 d d 8 b d 8 8 f . 
+        . f 8 8 f f d d d d f f 8 8 f . 
+        . f a a f b f d d f b f a a f . 
+        . f a a d 1 f 4 4 f 1 d a a f . 
+        f f a a f 4 4 4 4 4 4 f a a f f 
+        f a a f f f 7 7 7 7 f f f a a f 
+        . f d d f b d d d d b f d d f . 
+        . . d 4 c d d d d d d c 4 d . . 
+        . . d f b d b d b d b b f d . . 
+        . . . f f 1 d 1 d 1 d f f . . . 
+        . . . . . f f b b f f . . . . . 
+        `,img`
+        . . . . . . . f f . . . . . . . 
+        . . . . . f f 8 8 f f . . . . . 
+        . . . . f 8 8 8 8 8 8 f . . . . 
+        . . . f 8 8 8 8 8 8 8 8 f . . . 
+        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+        . f 8 8 8 8 8 8 8 8 8 8 8 8 f . 
+        . f 8 8 d b 8 d d 8 b d 8 8 f . 
+        . f a 8 f f d d d d f f 8 a f . 
+        f f a a f b f d d f b f a a f f 
+        f a a a d 1 f 4 4 f 1 d a a a f 
+        . f a a f 4 4 4 4 4 d d a a f . 
+        . . f d f b d d d d 4 4 4 f . . 
+        . . d 4 c d d d d d 4 4 d f . . 
+        . . d f b b d b d d d d f . . . 
+        . . . f f 1 1 d 1 d 1 f f . . . 
+        . . . . . f b b f f f . . . . . 
+        `],
+    100,
+    true
+    )
+}
+sprites.onOverlap(SpriteKind.Yes, SpriteKind.Player, function (sprite, otherSprite) {
+    sprite.destroy()
+    otherSprite.destroy()
+    No.destroy()
+    StarterFunction()
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Limit < 10) {
         projectile = sprites.createProjectileFromSprite(img`
@@ -470,6 +573,42 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 scene.onOverlapTile(SpriteKind.Enemy, sprites.dungeon.floorLight0, function (sprite, location) {
     sprite.destroy()
 })
+function StarterFunction () {
+    tiles.setTilemap(tilemap`level1`)
+    game.showLongText("Bubs and the Babes Brought to you by Virtue Games", DialogLayout.Top)
+    game.showLongText("Based on a true story. ", DialogLayout.Bottom)
+    MySpriteX = 95
+    mySpriteUp = sprites.create(img`
+        . . . . . . f f f f . . . . . . 
+        . . . . f f f 2 2 f f f . . . . 
+        . . . f f f 2 2 2 2 f f f . . . 
+        . . f f f 5 5 5 5 5 5 f f f . . 
+        . . f f 5 2 2 2 2 2 2 5 5 f . . 
+        . . f 5 2 f f f f f f 2 5 f . . 
+        . . f f f f 5 5 5 5 f f f f . . 
+        . f f f f b f 4 4 f b f f f f . 
+        . f f f 4 1 f d d f 1 4 f f f . 
+        . . f f d d d d d d d d f f . . 
+        . . . f d d 4 4 4 4 d d f . . . 
+        . . e 4 f 2 2 2 2 2 2 f 4 e . . 
+        . . 4 d f 2 2 2 2 2 2 f d 4 . . 
+        . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . . f f . . f f . . . . . 
+        `, SpriteKind.Player)
+    controller.moveSprite(mySpriteUp, 100, 100)
+    mySpriteUp.setPosition(MySpriteX, 80)
+    mySpriteUp.setStayInScreen(true)
+    Shield = 0
+    VY = 25
+    Time = 2000
+    VX = 25
+    Limit = 0
+    Life = 3
+    info.setLife(Life)
+    info.setScore(0)
+    info.startCountdown(30)
+}
 info.onCountdownEnd(function () {
     Powerup = sprites.create(img`
         . e f e e e e e e e e e e e e e 
@@ -499,12 +638,19 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant3, function (sprite, oth
     Poweruptwo_3.destroy()
     Shield += -1
 })
+sprites.onOverlap(SpriteKind.No, SpriteKind.Player, function (sprite, otherSprite) {
+    sprite.destroy()
+    game.showLongText("What would you be doing anyway, loser?", DialogLayout.Center)
+    otherSprite.destroy()
+    Yes.destroy()
+    StarterFunction()
+})
 scene.onHitWall(SpriteKind.Ally, function (sprite, location) {
     sprite.destroy()
 })
 sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSprite) {
     Powerup.destroy()
-    PowerupType = randint(1, 2)
+    PowerupType = randint(1, 5)
     if (PowerupType == 1 && Shield == 0) {
         PowerUp1 = sprites.create(img`
             .....555555555555..1...
@@ -1160,6 +1306,35 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         )
     }
 })
+info.onLifeZero(function () {
+    info.stopCountdown()
+    X = 1
+    tiles.setTilemap(tilemap`level5`)
+    game.showLongText("Thanks for playing Bubs and the Babes", DialogLayout.Center)
+    game.showLongText("Brought to you by Virtue Games", DialogLayout.Center)
+    game.showLongText("Special thanks to TJ: Lead Developer     Antone: Creative and Art Design      Harvey: Developer and Lead Playtester       Bubs: Inspiration and Comic Relief       Mr. Ruma: Sensei        ", DialogLayout.Center)
+    Yes = sprites.create(img`
+        1 1 1 1 1 1 1 1 1 1 1 1 1 
+        1 2 1 2 1 2 2 2 1 2 2 2 1 
+        1 2 1 2 1 2 1 1 1 2 1 1 1 
+        1 2 2 2 1 2 2 2 1 2 2 2 1 
+        1 1 1 2 1 2 1 1 1 1 1 2 1 
+        1 2 2 2 1 2 2 2 1 2 2 2 1 
+        1 1 1 1 1 1 1 1 1 1 1 1 1 
+        `, SpriteKind.Yes)
+    No = sprites.create(img`
+        1 1 1 1 1 1 1 1 1 
+        1 2 2 2 1 2 2 2 1 
+        1 2 1 2 1 2 1 2 1 
+        1 2 1 2 1 2 1 2 1 
+        1 2 1 2 1 2 1 2 1 
+        1 2 1 2 1 2 2 2 1 
+        1 1 1 1 1 1 1 1 1 
+        `, SpriteKind.No)
+    Yes.setPosition(30, 60)
+    No.setPosition(90, 60)
+    game.showLongText("Play Again?", DialogLayout.Bottom)
+})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy()
     info.changeScoreBy(50)
@@ -1186,55 +1361,28 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     pause(1000)
     otherSprite.destroy()
 })
+let X = 0
 let TheBoys: Sprite = null
 let Mrs_Beatty: Sprite = null
 let PowerUp1: Sprite = null
+let Yes: Sprite = null
 let Powerup: Sprite = null
+let Life = 0
+let VX = 0
+let Time = 0
+let Shield = 0
 let projectile: Sprite = null
+let Limit = 0
+let No: Sprite = null
+let VY = 0
 let PowerupType = 0
+let mySpriteUp: Sprite = null
 let MySpriteY = 0
+let MySpriteX = 0
 let Poweruptwo_3: Sprite = null
 let Poweruptwo_2: Sprite = null
 let Obstacle: Sprite = null
-let Life = 0
-let Limit = 0
-let Shield = 0
-let mySpriteUp: Sprite = null
-let MySpriteX = 0
-tiles.setTilemap(tilemap`level1`)
-game.showLongText("Bubs and the Babes Brought to you by Virtue Games", DialogLayout.Top)
-game.showLongText("Based on a true story. ", DialogLayout.Bottom)
-MySpriteX = 95
-mySpriteUp = sprites.create(img`
-    . . . . . . f f f f . . . . . . 
-    . . . . f f f 2 2 f f f . . . . 
-    . . . f f f 2 2 2 2 f f f . . . 
-    . . f f f 5 5 5 5 5 5 f f f . . 
-    . . f f 5 2 2 2 2 2 2 5 5 f . . 
-    . . f 5 2 f f f f f f 2 5 f . . 
-    . . f f f f 5 5 5 5 f f f f . . 
-    . f f f f b f 4 4 f b f f f f . 
-    . f f f 4 1 f d d f 1 4 f f f . 
-    . . f f d d d d d d d d f f . . 
-    . . . f d d 4 4 4 4 d d f . . . 
-    . . e 4 f 2 2 2 2 2 2 f 4 e . . 
-    . . 4 d f 2 2 2 2 2 2 f d 4 . . 
-    . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
-    . . . . . f f f f f f . . . . . 
-    . . . . . f f . . f f . . . . . 
-    `, SpriteKind.Player)
-controller.moveSprite(mySpriteUp, 100, 100)
-mySpriteUp.setPosition(MySpriteX, 80)
-mySpriteUp.setStayInScreen(true)
-Shield = 0
-let VY = 25
-let Time = 2000
-let VX = 25
-Limit = 0
-Life = 3
-info.setLife(Life)
-info.setScore(0)
-info.startCountdown(30)
+StarterFunction()
 game.onUpdateInterval(25, function () {
     MySpriteX = mySpriteUp.x
     MySpriteY = mySpriteUp.y
@@ -1248,98 +1396,10 @@ game.onUpdateInterval(1500, function () {
     Limit += -1
 })
 game.onUpdateInterval(Time, function () {
-    Obstacle = sprites.create(img`
-        . . . . . f f 8 8 f f . . . . . 
-        . . . . f 8 8 8 8 8 8 f . . . . 
-        . . . f 8 8 8 8 8 8 8 8 f . . . 
-        . . f a 8 8 8 8 8 8 8 8 a f . . 
-        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
-        . f 8 8 d b 3 d d 3 b d 8 8 f . 
-        . f 8 8 f f d d d d f f 8 8 f . 
-        . f a a f b f d d f b f a a f . 
-        . f a a d 1 f 4 4 f 1 d a a f . 
-        f f a a f 4 4 4 4 4 4 f a a f f 
-        f a a f f f d d d d f f f a a f 
-        . f d d f b 7 7 7 7 b f d d f . 
-        . . d 4 c 7 7 7 7 7 7 c 4 d . . 
-        . . d f b 7 b 7 b 7 b b f d . . 
-        . . . f f 1 d 1 d 1 d f f . . . 
-        . . . . . f f b b f f . . . . . 
-        `, SpriteKind.Enemy)
-    Obstacle.setPosition(randint(140, 20), 10)
-    Obstacle.setVelocity(0, VY)
-    animation.runImageAnimation(
-    Obstacle,
-    [img`
-        . . . . . f f 8 8 f f . . . . . 
-        . . . . f 8 8 8 8 8 8 f . . . . 
-        . . . f 8 8 8 8 8 8 8 8 f . . . 
-        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
-        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
-        . f 8 8 d b 8 d d 8 b d 8 8 f . 
-        . f 8 8 f f d d d d f f 8 8 f . 
-        . f a a f b f d d f b f a a f . 
-        . f a a d 1 f 4 4 f 1 d a a f . 
-        f f a a f 4 4 4 4 4 4 f a a f f 
-        f a a f f f 7 7 7 7 f f f a a f 
-        . f d d f b d d d d b f d d f . 
-        . . d 4 c d d d d d d c 4 d . . 
-        . . d f b d b d b d b b f d . . 
-        . . . f f 1 d 1 d 1 d f f . . . 
-        . . . . . f f b b f f . . . . . 
-        `,img`
-        . . . . . . . f f . . . . . . . 
-        . . . . . f f 8 8 f f . . . . . 
-        . . . . f 8 8 8 8 8 8 f . . . . 
-        . . . f 8 8 8 8 8 8 8 8 f . . . 
-        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
-        . f 8 8 8 8 8 8 8 8 8 8 8 8 f . 
-        . f 8 8 d b 8 d d 8 b d 8 8 f . 
-        . f a 8 f f d d d d f f 8 a f . 
-        f f a a f b f d d f b f a a f f 
-        f a a a d 1 f 4 4 f 1 d a a a f 
-        . f a a d d 4 4 4 4 4 f a a f . 
-        . . f 4 4 4 d d d d b f d f . . 
-        . . f d 4 4 d d d d d c 4 d . . 
-        . . . f d d d d b d b b f d . . 
-        . . . f f 1 d 1 d 1 1 f f . . . 
-        . . . . . f f f b b f . . . . . 
-        `,img`
-        . . . . . f f 8 8 f f . . . . . 
-        . . . . f 8 8 8 8 8 8 f . . . . 
-        . . . f 8 8 8 8 8 8 8 8 f . . . 
-        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
-        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
-        . f 8 8 d b 8 d d 8 b d 8 8 f . 
-        . f 8 8 f f d d d d f f 8 8 f . 
-        . f a a f b f d d f b f a a f . 
-        . f a a d 1 f 4 4 f 1 d a a f . 
-        f f a a f 4 4 4 4 4 4 f a a f f 
-        f a a f f f 7 7 7 7 f f f a a f 
-        . f d d f b d d d d b f d d f . 
-        . . d 4 c d d d d d d c 4 d . . 
-        . . d f b d b d b d b b f d . . 
-        . . . f f 1 d 1 d 1 d f f . . . 
-        . . . . . f f b b f f . . . . . 
-        `,img`
-        . . . . . . . f f . . . . . . . 
-        . . . . . f f 8 8 f f . . . . . 
-        . . . . f 8 8 8 8 8 8 f . . . . 
-        . . . f 8 8 8 8 8 8 8 8 f . . . 
-        . . f 8 8 8 8 8 8 8 8 8 8 f . . 
-        . f 8 8 8 8 8 8 8 8 8 8 8 8 f . 
-        . f 8 8 d b 8 d d 8 b d 8 8 f . 
-        . f a 8 f f d d d d f f 8 a f . 
-        f f a a f b f d d f b f a a f f 
-        f a a a d 1 f 4 4 f 1 d a a a f 
-        . f a a f 4 4 4 4 4 d d a a f . 
-        . . f d f b d d d d 4 4 4 f . . 
-        . . d 4 c d d d d d 4 4 d f . . 
-        . . d f b b d b d d d d f . . . 
-        . . . f f 1 1 d 1 d 1 f f . . . 
-        . . . . . f b b f f f . . . . . 
-        `],
-    100,
-    true
-    )
+    Enemies()
+})
+game.onUpdateInterval(Time, function () {
+    if (X == 1) {
+        Obstacle.destroy()
+    }
 })
