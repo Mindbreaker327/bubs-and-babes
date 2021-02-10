@@ -134,30 +134,22 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     )
     if (PowerupType == 5) {
         mySpriteUp.setImage(img`
-            ........................
-            ........................
-            ........................
-            ........................
-            ..........ffff..........
-            ........ff1111ff........
-            .......fb111111bf.......
-            .......f11111111f.......
-            ......fd11111111df......
-            ......fd11111111df......
-            ......fddd1111dddf......
-            ......fbdbfddfbdbf......
-            ......fcdcf11fcdcf......
-            .......fb111111bf.......
-            ......fffcdb1bdffff.....
-            ....fc111cbfbfc111cf....
-            ....f1b1b1ffff1b1b1f....
-            ....fbfbffffffbfbfbf....
-            .........ffffff.........
-            ...........fff..........
-            ........................
-            ........................
-            ........................
-            ........................
+            . . . . . . f f f f . . . . . . 
+            . . . . f f f 2 2 f f f . . . . 
+            . . . f f 5 2 2 2 2 5 f f . . . 
+            . . f f 5 5 5 5 5 5 5 5 f f . . 
+            . . f 5 5 2 2 2 2 2 2 5 5 f . . 
+            . . f 5 2 f f f f f f 2 5 f . . 
+            . . f 5 f f e e e e f f 5 f . . 
+            . f 5 f f b f 4 4 f b f 5 5 f . 
+            . f 5 f 4 1 f d d f 1 4 f 5 f . 
+            . . f 5 f d d d d d d f 5 f . . 
+            . . . f f 8 8 8 8 8 8 f f . . . 
+            . . d d d d d d d d d d d d . . 
+            . . d d d d d d d d d d d d . . 
+            . . d d d 8 8 8 8 8 8 d d d . . 
+            . . . . . d 8 8 8 8 d . . . . . 
+            . . . . . d d . . d d . . . . . 
             `)
         animation.runImageAnimation(
         mySpriteUp,
@@ -581,13 +573,13 @@ function StarterFunction () {
     mySpriteUp = sprites.create(img`
         . . . . . . f f f f . . . . . . 
         . . . . f f f 2 2 f f f . . . . 
-        . . . f f f 2 2 2 2 f f f . . . 
-        . . f f f 5 5 5 5 5 5 f f f . . 
-        . . f f 5 2 2 2 2 2 2 5 5 f . . 
+        . . . f f 5 2 2 2 2 5 f f . . . 
+        . . f f 5 5 5 5 5 5 5 5 f f . . 
+        . . f 5 5 2 2 2 2 2 2 5 5 f . . 
         . . f 5 2 f f f f f f 2 5 f . . 
-        . . f f f f 5 5 5 5 f f f f . . 
-        . f f f f b f 4 4 f b f f f f . 
-        . f f f 4 1 f d d f 1 4 f f f . 
+        . . f 5 f f 5 5 5 5 f f 5 f . . 
+        . f 5 f f b f 4 4 f b f f 5 f . 
+        . f 5 f 4 1 f d d f 1 4 f 5 f . 
         . . f f d d d d d d d d f f . . 
         . . . f d d 4 4 4 4 d d f . . . 
         . . e 4 f 2 2 2 2 2 2 f 4 e . . 
@@ -691,22 +683,22 @@ sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSp
     } else if (PowerupType == 3) {
         game.showLongText("MRS. BEATTY!!", DialogLayout.Bottom)
         Mrs_Beatty = sprites.create(img`
-            . . . . . f f f f . . . . . 
-            . . . f f 5 5 5 5 f f . . . 
-            . . f 5 5 5 5 5 5 5 5 f . . 
-            . f 5 5 5 5 5 5 5 5 5 5 f . 
-            . f 5 5 5 d b b d 5 5 5 f . 
-            f 5 5 5 b 4 4 4 4 b 5 5 5 f 
-            f 5 5 c c 4 4 4 4 c c 5 5 f 
-            f b b f b f 4 4 f b f b b f 
-            f b b 4 1 f d d f 1 4 b b f 
-            . f b f d d d d d d f b f . 
-            . f e f e 4 4 4 4 e f e f . 
-            . e 4 f 6 9 9 9 9 6 f 4 e . 
-            . 4 d c 9 9 9 9 9 9 c d 4 . 
-            . 4 f b 3 b 3 b 3 b b f 4 . 
-            . . f f 3 b 3 b 3 3 f f . . 
-            . . . . f f b b f f . . . . 
+            . . . . . . f f f f . . . . . . 
+            . . . . f f f 2 2 f f f . . . . 
+            . . . f f f 2 2 2 2 f f f . . . 
+            . . f f f 5 5 5 5 5 5 f f f . . 
+            . . f f 5 2 2 2 2 2 2 5 5 f . . 
+            . . f 5 2 f f f f f f 2 5 f . . 
+            . . f f f f 5 5 5 5 f f f f . . 
+            . f f f f b f 4 4 f b f f f f . 
+            . f f f 4 1 f d d f 1 4 f f f . 
+            . . f f d d d d d d d d f f . . 
+            . . . f d d 4 4 4 4 d d f . . . 
+            . . e 4 f 2 2 2 2 2 2 f 4 e . . 
+            . . 4 d f 2 2 2 2 2 2 f d 4 . . 
+            . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
+            . . . . . f f f f f f . . . . . 
+            . . . . . f f . . f f . . . . . 
             `, SpriteKind.Parent)
         pause(1000)
         for (let index = 0; index < 10; index++) {
@@ -803,30 +795,22 @@ sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSp
     } else if (PowerupType == 5) {
         mySpriteUp.destroy()
         mySpriteUp = sprites.create(img`
-            ........................
-            ........................
-            ........................
-            ........................
-            ..........ffff..........
-            ........ff1111ff........
-            .......fb111111bf.......
-            .......f11111111f.......
-            ......fd11111111df......
-            ......fd11111111df......
-            ......fddd1111dddf......
-            ......fbdbfddfbdbf......
-            ......fcdcf11fcdcf......
-            .......fb111111bf.......
-            ......fffcdb1bdffff.....
-            ....fc111cbfbfc111cf....
-            ....f1b1b1ffff1b1b1f....
-            ....fbfbffffffbfbfbf....
-            .........ffffff.........
-            ...........fff..........
-            ........................
-            ........................
-            ........................
-            ........................
+            . . . . . . f f f f . . . . . . 
+            . . . . f f f 2 2 f f f . . . . 
+            . . . f f f 2 2 2 2 f f f . . . 
+            . . f f f 5 5 5 5 5 5 f f f . . 
+            . . f f 5 2 2 2 2 2 2 5 5 f . . 
+            . . f 5 2 f f f f f f 2 5 f . . 
+            . . f f f f 5 5 5 5 f f f f . . 
+            . f f f f b f 4 4 f b f f f f . 
+            . f f f 4 1 f d d f 1 4 f f f . 
+            . . f f d d d d d d d d f f . . 
+            . . . f d d 4 4 4 4 d d f . . . 
+            . . e 4 f 2 2 2 2 2 2 f 4 e . . 
+            . . 4 d f 2 2 2 2 2 2 f d 4 . . 
+            . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
+            . . . . . f f f f f f . . . . . 
+            . . . . . f f . . f f . . . . . 
             `, SpriteKind.Player)
         controller.moveSprite(mySpriteUp)
         for (let index = 0; index < 5; index++) {
@@ -1314,22 +1298,40 @@ info.onLifeZero(function () {
     game.showLongText("Brought to you by Virtue Games", DialogLayout.Center)
     game.showLongText("Special thanks to TJ: Lead Developer     Antone: Creative and Art Design      Harvey: Developer and Lead Playtester       Bubs: Inspiration and Comic Relief       Mr. Ruma: Sensei        ", DialogLayout.Center)
     Yes = sprites.create(img`
-        1 1 1 1 1 1 1 1 1 1 1 1 1 
-        1 2 1 2 1 2 2 2 1 2 2 2 1 
-        1 2 1 2 1 2 1 1 1 2 1 1 1 
-        1 2 2 2 1 2 2 2 1 2 2 2 1 
-        1 1 1 2 1 2 1 1 1 1 1 2 1 
-        1 2 2 2 1 2 2 2 1 2 2 2 1 
-        1 1 1 1 1 1 1 1 1 1 1 1 1 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
         `, SpriteKind.Yes)
     No = sprites.create(img`
-        1 1 1 1 1 1 1 1 1 
-        1 2 2 2 1 2 2 2 1 
-        1 2 1 2 1 2 1 2 1 
-        1 2 1 2 1 2 1 2 1 
-        1 2 1 2 1 2 1 2 1 
-        1 2 1 2 1 2 2 2 1 
-        1 1 1 1 1 1 1 1 1 
+        . . . . . . f f f f . . . . . . 
+        . . . . f f 5 5 5 5 f f . . . . 
+        . . . f 5 5 5 f f 5 5 5 f . . . 
+        . . f f f f f 2 2 f f f f f . . 
+        . . f f 5 2 5 2 2 5 2 5 f f . . 
+        . . f 5 2 f 2 f f 2 f 2 5 f . . 
+        . . f f f 2 2 5 5 2 2 f f f . . 
+        . f f 5 f 2 f 5 5 f 2 f 5 f f . 
+        . f 5 5 f f 5 5 5 5 f 5 5 5 f . 
+        . . f 5 5 5 5 5 5 5 5 5 5 f . . 
+        . . . f 5 5 5 5 5 5 5 5 f . . . 
+        . . e 4 f f f f f f f f 4 e . . 
+        . . 4 d f 2 2 2 2 2 2 f d 4 . . 
+        . . 4 4 f 4 4 4 4 4 4 f 4 4 . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . . f f . . f f . . . . . 
         `, SpriteKind.No)
     Yes.setPosition(30, 60)
     No.setPosition(90, 60)
