@@ -10,6 +10,7 @@ namespace SpriteKind {
     export const No = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant2, function (sprite, otherSprite) {
+    Y += 1
     Obstacle.destroy()
     Poweruptwo_2.destroy()
     Poweruptwo_3 = sprites.create(img`
@@ -637,6 +638,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant3, function (sprite, oth
     sprite.destroy()
     Poweruptwo_3.destroy()
     Shield += -1
+    Y = 0
 })
 sprites.onOverlap(SpriteKind.No, SpriteKind.Player, function (sprite, otherSprite) {
     sprite.destroy()
@@ -652,6 +654,7 @@ sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSp
     Powerup.destroy()
     PowerupType = randint(1, 5)
     if (PowerupType == 1 && Shield == 0) {
+        Y = 1
         PowerUp1 = sprites.create(img`
             .....555555555555..1...
             .1..55555555555555.....
@@ -1048,6 +1051,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSp
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Assistant, function (sprite, otherSprite) {
     Obstacle.destroy()
+    Y += 1
     PowerUp1.destroy()
     Poweruptwo_2 = sprites.create(img`
         ......................
@@ -1340,26 +1344,100 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     info.changeScoreBy(50)
     otherSprite.setVelocity(0, -50)
     Obstacle.setImage(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . f f 4 4 f f . . . . . 
+        . . . . f 5 4 5 5 4 5 f . . . . 
+        . . . f e 3 3 3 3 3 3 e f . . . 
+        . . f b 3 3 3 3 3 3 3 3 b f . . 
+        . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+        . f 3 3 3 3 3 3 3 3 3 3 3 3 f . 
+        . f b 3 3 3 3 3 3 3 3 3 3 b f . 
+        . f b b 3 3 3 3 3 3 3 3 b b f . 
+        . f b b b b b b b b b b b b f . 
+        f c b b b b b b b b b b b b c f 
+        f b b b b b b b b b b b b b b f 
+        . f c c b b b b b b b b c c f . 
+        . . e 4 c f f f f f f c 4 e . . 
+        . . e f b d b d b d b b f e . . 
+        . . . f f 1 d 1 d 1 d f f . . . 
+        . . . . . f f b b f f . . . . . 
         `)
     otherSprite.startEffect(effects.fountain, 1000)
     pause(1000)
     otherSprite.destroy()
+    animation.runImageAnimation(
+    otherSprite,
+    [img`
+        . . . . . f f 4 4 f f . . . . . 
+        . . . . f 5 4 5 5 4 5 f . . . . 
+        . . . f e 3 3 3 3 3 3 e f . . . 
+        . . f b 3 3 3 3 3 3 3 3 b f . . 
+        . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+        . f 3 3 3 3 3 3 3 3 3 3 3 3 f . 
+        . f b 3 3 3 3 3 3 3 3 3 3 b f . 
+        . f b b 3 3 3 3 3 3 3 3 b b f . 
+        . f b b b b b b b b b b b b f . 
+        f c b b b b b b b b b b b b c f 
+        f b b b b b b b b b b b b b b f 
+        . f c c b b b b b b b b c c f . 
+        . . e 4 c f f f f f f c 4 e . . 
+        . . e f b d b d b d b b f e . . 
+        . . . f f 1 d 1 d 1 d f f . . . 
+        . . . . . f f b b f f . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f 4 4 f f . . . . . 
+        . . . . f 5 4 5 5 4 5 f . . . . 
+        . . . f e 3 3 3 3 3 3 e f . . . 
+        . . f b 3 3 3 3 3 3 3 3 b f . . 
+        . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+        . f b 3 3 3 3 3 3 3 3 3 3 b f . 
+        . f b b 3 3 3 3 3 3 3 3 b b f . 
+        . f b b b b b b b b b b b b f . 
+        f c b b b b b b b b b b b b f . 
+        f b b b b b b b b b b b b c f . 
+        f f b b b b b b b b b b c f . . 
+        . f c c c f f f f f f f e c . . 
+        . . . f b b d b d d e 4 4 e . . 
+        . . . f f 1 1 d 1 d e e f . . . 
+        . . . . . f b b f f f . . . . . 
+        `,img`
+        . . . . . f f 4 4 f f . . . . . 
+        . . . . f 5 4 5 5 4 5 f . . . . 
+        . . . f e 3 3 3 3 3 3 e f . . . 
+        . . f b 3 3 3 3 3 3 3 3 b f . . 
+        . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+        . f 3 3 3 3 3 3 3 3 3 3 3 3 f . 
+        . f b 3 3 3 3 3 3 3 3 3 3 b f . 
+        . f b b 3 3 3 3 3 3 3 3 b b f . 
+        . f b b b b b b b b b b b b f . 
+        f c b b b b b b b b b b b b c f 
+        f b b b b b b b b b b b b b b f 
+        . f c c b b b b b b b b c c f . 
+        . . e 4 c f f f f f f c 4 e . . 
+        . . e f b d b d b d b b f e . . 
+        . . . f f 1 d 1 d 1 d f f . . . 
+        . . . . . f f b b f f . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f 4 4 f f . . . . . 
+        . . . . f 5 4 5 5 4 5 f . . . . 
+        . . . f e 3 3 3 3 3 3 e f . . . 
+        . . f b 3 3 3 3 3 3 3 3 b f . . 
+        . . f 3 3 3 3 3 3 3 3 3 3 f . . 
+        . f b 3 3 3 3 3 3 3 3 3 3 b f . 
+        . f b b 3 3 3 3 3 3 3 3 b b f . 
+        . f b b b b b b b b b b b b f . 
+        . f b b b b b b b b b b b b c f 
+        . f c b b b b b b b b b b b b f 
+        . . f c b b b b b b b b b b f f 
+        . . c e f f f f f f f c c c f . 
+        . . e 4 4 e d d b d b b f . . . 
+        . . . f e e d 1 d 1 1 f f . . . 
+        . . . . . f f f b b f . . . . . 
+        `],
+    100,
+    true
+    )
 })
 let X = 0
 let TheBoys: Sprite = null
@@ -1382,6 +1460,7 @@ let MySpriteX = 0
 let Poweruptwo_3: Sprite = null
 let Poweruptwo_2: Sprite = null
 let Obstacle: Sprite = null
+let Y = 0
 StarterFunction()
 game.onUpdateInterval(25, function () {
     MySpriteX = mySpriteUp.x
@@ -1391,6 +1470,15 @@ game.onUpdateInterval(1000, function () {
     VY += 1
     Time += -1
     VX += 1
+})
+game.onUpdateInterval(10, function () {
+    if (Y == 1) {
+        PowerUp1.setPosition(mySpriteUp.x, mySpriteUp.y - 5)
+    } else if (Y == 2) {
+        Poweruptwo_2.setPosition(mySpriteUp.x, mySpriteUp.y - 5)
+    } else if (Y == 3) {
+        Poweruptwo_3.setPosition(mySpriteUp.x, mySpriteUp.y - 5)
+    }
 })
 game.onUpdateInterval(1500, function () {
     Limit += -1
