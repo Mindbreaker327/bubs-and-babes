@@ -1164,6 +1164,24 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     sprite.destroy()
     info.changeScoreBy(50)
     otherSprite.setVelocity(0, -50)
+    Obstacle.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
     otherSprite.startEffect(effects.fountain, 1000)
     pause(1000)
     otherSprite.destroy()
@@ -1190,9 +1208,9 @@ MySpriteX = 95
 mySpriteUp = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
-    . . . f f 5 2 2 2 2 5 f f . . . 
-    . . f f 5 5 5 5 5 5 5 5 f f . . 
-    . . f 5 5 2 2 2 2 2 2 5 5 f . . 
+    . . . f f f 2 2 2 2 f f f . . . 
+    . . f f f 5 5 5 5 5 5 f f f . . 
+    . . f f 5 2 2 2 2 2 2 5 5 f . . 
     . . f 5 2 f f f f f f 2 5 f . . 
     . . f f f f 5 5 5 5 f f f f . . 
     . f f f f b f 4 4 f b f f f f . 
