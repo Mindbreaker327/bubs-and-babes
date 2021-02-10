@@ -1190,9 +1190,9 @@ MySpriteX = 95
 mySpriteUp = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
-    . . . f f f 2 2 2 2 f f f . . . 
-    . . f f f 5 5 5 5 5 5 f f f . . 
-    . . f f 5 2 2 2 2 2 2 5 5 f . . 
+    . . . f f 5 2 2 2 2 5 f f . . . 
+    . . f f 5 5 5 5 5 5 5 5 f f . . 
+    . . f 5 5 2 2 2 2 2 2 5 5 f . . 
     . . f 5 2 f f f f f f 2 5 f . . 
     . . f f f f 5 5 5 5 f f f f . . 
     . f f f f b f 4 4 f b f f f f . 
