@@ -728,18 +728,18 @@ sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSp
         for (let index = 0; index < 15; index++) {
             pause(500)
             TheBoys = sprites.create(img`
-                . . . . . f f 4 4 f f . . . . . 
-                . . . . f 5 4 5 5 4 5 f . . . . 
-                . . . f e 3 3 3 3 3 3 e f . . . 
-                . . f b 3 3 3 3 3 3 3 3 b f . . 
-                . . f 3 3 3 3 3 3 3 3 3 3 f . . 
-                . f 3 3 3 3 3 3 3 3 3 3 3 3 f . 
-                . f b 3 3 3 3 3 3 3 3 3 3 b f . 
-                . f b b 3 3 3 3 3 3 3 3 b b f . 
-                . f b b b b b b b b b b b b f . 
-                f c b b b b b b b b b b b b c f 
-                f b b b b b b b b b b b b b b f 
-                . f c c b b b b b b b b c c f . 
+                . . . . . f f 8 8 f f . . . . . 
+                . . . . f 8 8 8 8 8 8 f . . . . 
+                . . . f 8 8 8 8 8 8 8 8 f . . . 
+                . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+                . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+                . f 8 8 8 8 8 8 8 8 8 8 8 8 f . 
+                . f a 8 8 8 8 8 8 8 8 8 8 a f . 
+                . f a a 8 8 8 8 8 8 8 8 a a f . 
+                . f a a a a a a a a a a a a f . 
+                f c a a a a a a a a a a a a c f 
+                f a a a a a a a a a a a a a a f 
+                . f c c a a a a a a a a c c f . 
                 . . e 4 c f f f f f f c 4 e . . 
                 . . e f b d b d b d b b f e . . 
                 . . . f f 1 d 1 d 1 d f f . . . 
