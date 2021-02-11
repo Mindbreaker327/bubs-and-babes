@@ -135,38 +135,38 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     )
     if (PowerupType == 5) {
         mySpriteUp.setImage(img`
-            . . . . . . f f f f . . . . . . 
-            . . . . f f f 8 8 f f f . . . . 
-            . . . f f 8 8 8 8 8 8 f f . . . 
-            . . f f 8 8 8 8 8 8 8 8 f f . . 
-            . . f 8 8 8 8 8 8 8 8 8 8 f . . 
-            . . f 8 8 8 8 8 8 8 8 8 8 f . . 
-            . . f f 5 5 5 5 5 5 5 5 f f . . 
-            . f f 5 f b f 4 4 f b f 5 f f . 
-            . f 5 5 4 1 f d d f 1 4 5 5 f . 
-            . . f f f d d d d d d f f f . . 
-            . . . f f 2 2 2 2 2 2 f f . . . 
-            . . d 4 d d d d d d d d 4 d . . 
-            . . 4 d d d d d d d d d d 4 . . 
-            . . 4 4 d 8 8 8 8 8 8 d 4 4 . . 
-            . . . . . d 8 8 8 8 d . . . . . 
-            . . . . . d d . . d d . . . . . 
+            . . . . . f f f f . . . . . . . 
+            . . . f f 8 8 8 8 f f . . . . . 
+            . . f 8 8 8 8 8 8 8 8 f . . . . 
+            . f f 8 8 8 8 8 8 8 8 f f . . . 
+            . f 8 8 8 8 8 8 8 8 8 8 f . . . 
+            . f 8 8 8 8 8 8 8 8 8 8 f . . . 
+            . f 8 8 8 8 8 8 8 8 8 8 f . . . 
+            f f 8 8 8 8 8 8 8 8 8 8 f f . . 
+            f 8 8 8 8 8 8 8 8 8 8 8 8 f . . 
+            . f 8 8 8 8 8 8 8 8 8 8 f . . . 
+            . . f 8 8 8 8 8 8 8 8 f . . . . 
+            . e 4 2 2 2 2 2 2 2 2 4 e . . . 
+            . 4 d d d d d d d d d d 4 . . . 
+            . 4 4 d 8 8 8 8 8 8 d 4 4 . . . 
+            . . . . d 8 8 8 8 d . . . . . . 
+            . . . . d d . . d d . . . . . . 
             `)
         animation.runImageAnimation(
         mySpriteUp,
         [img`
             . . . . . . f f f f . . . . . . 
-            . . . . f f f 8 8 f f f . . . . 
-            . . . f f 8 8 8 8 8 8 f f . . . 
+            . . . . f f 8 8 8 8 f f . . . . 
+            . . . f 8 8 8 8 8 8 8 8 f . . . 
             . . f f 8 8 8 8 8 8 8 8 f f . . 
             . . f 8 8 8 8 8 8 8 8 8 8 f . . 
             . . f 8 8 8 8 8 8 8 8 8 8 f . . 
-            . . f f 5 5 5 5 5 5 5 5 f f . . 
-            . f f 5 f b f 4 4 f b f 5 f f . 
-            . f 5 5 4 1 f d d f 1 4 5 5 f . 
-            . . f f f d d d d d d f f f . . 
-            . . . f f 2 2 2 2 2 2 f f . . . 
-            . . d 4 d d d d d d d d 4 d . . 
+            . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+            . f f 8 8 8 8 8 8 8 8 8 8 f f . 
+            . f 8 8 8 8 8 8 8 8 8 8 8 8 f . 
+            . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+            . . . f 8 8 8 8 8 8 8 8 f . . . 
+            . . e 4 2 2 2 2 2 2 2 2 4 e . . 
             . . 4 d d d d d d d d d d 4 . . 
             . . 4 4 d 8 8 8 8 8 8 d 4 4 . . 
             . . . . . d 8 8 8 8 d . . . . . 
@@ -174,33 +174,33 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
             `,img`
             . . . . . . . . . . . . . . . . 
             . . . . . . f f f f . . . . . . 
-            . . . . f f f 8 8 f f f . . . . 
-            . . . f f 8 8 8 8 8 8 f f . . . 
-            . . f f 8 8 8 8 8 8 8 8 f f . . 
+            . . . . f f 8 8 8 8 f f . . . . 
+            . . . f 8 8 8 8 8 8 8 8 f . . . 
+            . . . f 8 8 8 8 8 8 8 8 f . . . 
+            . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+            . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+            . . f 8 8 8 8 8 8 8 8 8 8 f . . 
             . . f 8 8 8 8 8 8 8 8 8 8 f . . 
             . f f 8 8 8 8 8 8 8 8 8 8 f f . 
-            . f f f 5 5 5 5 5 5 5 5 f f f . 
-            . . f 5 f b f 4 4 f b f 5 f . . 
-            . . f 5 4 1 f d d f 1 4 5 f . . 
-            . . . f e 4 d d d d 4 e f e . . 
-            . . f e f 2 2 2 2 e d d 4 e . . 
-            . . e 4 d d d d d e d d e . . . 
-            . . . . d 8 8 8 8 8 e e . . . . 
-            . . . . d d 8 8 8 d d . . . . . 
+            . f f 8 8 8 8 8 8 8 8 8 8 f f . 
+            . . . f 8 8 8 8 8 8 8 8 f . . . 
+            . . . e 2 2 2 2 2 2 2 2 4 e . . 
+            . . . 4 d 8 8 8 8 8 e d d 4 . . 
+            . . . e d d 8 8 8 d e e 4 . . . 
             . . . . d d d . . . . . . . . . 
             `,img`
             . . . . . . f f f f . . . . . . 
-            . . . . f f f 8 8 f f f . . . . 
-            . . . f f 8 8 8 8 8 8 f f . . . 
-            . . f f 8 8 8 8 8 8 8 8 f f . . 
+            . . . . f f 8 8 8 8 f f . . . . 
+            . . . f 8 8 8 8 8 8 8 8 f . . . 
             . . f 8 8 8 8 8 8 8 8 8 8 f . . 
             . . f 8 8 8 8 8 8 8 8 8 8 f . . 
-            . . f f 5 5 5 5 5 5 5 5 f f . . 
-            . f f 5 f b f 4 4 f b f 5 f f . 
-            . f 5 5 4 1 f d d f 1 4 5 5 f . 
-            . . f f f d d d d d d f f f . . 
-            . . . f f 2 2 2 2 2 2 f f . . . 
-            . . d 4 d d d d d d d d 4 d . . 
+            . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+            . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+            . f 8 8 8 8 8 8 8 8 8 8 8 8 f . 
+            . f 8 8 8 8 8 8 8 8 8 8 8 8 f . 
+            . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+            . . . f 8 8 8 8 8 8 8 8 f . . . 
+            . . e 4 2 2 2 2 2 2 2 2 4 e . . 
             . . 4 d d d d d d d d d d 4 . . 
             . . 4 4 d 8 8 8 8 8 8 d 4 4 . . 
             . . . . . d 8 8 8 8 d . . . . . 
@@ -208,19 +208,19 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
             `,img`
             . . . . . . . . . . . . . . . . 
             . . . . . . f f f f . . . . . . 
-            . . . . f f f 8 8 f f f . . . . 
-            . . . f f f 8 8 8 8 f f f . . . 
-            . . f f f 8 8 8 8 8 8 f f f . . 
-            . . f 8 8 8 8 8 8 8 8 8 f f . . 
-            . f f 8 8 8 8 8 8 8 8 8 8 f f . 
-            . f f f 5 5 5 5 5 5 5 5 f f f . 
-            . . f 5 f b f 4 4 f b f 5 f . . 
-            . . f 5 4 1 f d d f 1 4 5 f . . 
-            . . e f e 4 d d d d 4 e f . . . 
-            . . e 4 d 2 2 2 2 2 2 f e f . . 
-            . . d e d d d d d d d d 4 e . . 
-            . . . . d d 8 8 8 8 8 d . . . . 
-            . . . . . d d 8 8 8 d d . . . . 
+            . . . . f f 8 8 8 8 f f . . . . 
+            . . . f 8 8 8 8 8 8 8 8 f . . . 
+            . . . f 8 8 8 8 8 8 8 8 f . . . 
+            . . f f 8 8 8 8 8 8 8 8 f f . . 
+            . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+            . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+            . . f 8 8 8 8 8 8 8 8 8 8 f . . 
+            . f 8 8 8 8 8 8 8 8 8 8 8 8 f . 
+            . f 8 8 8 8 8 8 8 8 8 8 8 8 f . 
+            . . . f 8 8 8 8 8 8 8 8 8 . . . 
+            . . e 4 2 2 2 2 2 2 2 2 e . . . 
+            . . 4 d d e 8 8 8 8 8 8 4 . . . 
+            . . . 4 e e d 8 8 8 8 d e . . . 
             . . . . . . . . . d d d . . . . 
             `],
         200,
