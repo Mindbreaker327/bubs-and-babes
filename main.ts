@@ -934,9 +934,9 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
         mySpriteUp.setImage(img`
             . . . . . . f f f f f f . . . . 
             . . . . f f 8 8 8 8 8 8 f . . . 
-            . . . f f 8 8 8 8 8 8 8 8 f . . 
-            . . . f 8 8 8 8 8 8 8 8 8 f . . 
-            . . . f 8 8 8 8 8 8 8 8 8 8 f . 
+            . . . f f 8 8 2 8 8 8 2 8 f . . 
+            . . . f 8 8 8 8 2 8 2 8 8 f . . 
+            . . . f 8 8 8 8 8 2 8 8 8 8 f . 
             . . . f 8 8 8 8 8 8 8 8 8 8 f . 
             . . f f f 5 5 5 5 5 5 5 f f f . 
             . . f f 5 4 4 e b f 4 4 5 5 f . 

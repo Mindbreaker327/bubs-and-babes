@@ -654,9 +654,9 @@ e 4 e f b b b b b f 4 .
 `]</field><data>{"commentRefs":[],"fieldData":{"frames":"myAnimations.anim47"}}</data></shadow></value><value name="frameInterval"><shadow type="timePicker" id="3xv]u~n(~%07t19MA}+Q"><field name="ms">200</field></shadow></value><value name="loop"><shadow type="toggleOnOff" id="ZFatxF~70,f/j](pz;UV"><field name="on">false</field></shadow></value><next><block type="controls_if" id="E7tbo2Xq2J1iaL2kC~[#"><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="logic_compare" id="a*bST76{}{NA.%cX*x|."><field name="OP">EQ</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="variables_get" id="$CtIaUgJ5J7bEI{IfOHq"><field name="VAR" id="SUfpC*M[2nR4XF{3_+tw">PowerupType</field></block></value><value name="B"><shadow type="math_number" id="JC0~Ouf|cH0=4a9B-5va"><field name="NUM">5</field></shadow></value></block></value><statement name="DO0"><block type="spritesetimage" id="O=S=]uqoTv^d6t5FZ0H-"><value name="sprite"><block type="variables_get" id="x!`uXMHh8|RjwjEI@G0Z"><field name="VAR" id="b*e7gc!K2/%)FM,+wdcu">mySpriteUp</field></block></value><value name="img"><shadow type="screen_image_picker" id="^9Wmkc5fY|[crm(NDvZ^"><field name="img">img`
 . . . . . . f f f f f f . . . . 
 . . . . f f 8 8 8 8 8 8 f . . . 
-. . . f f 8 8 8 8 8 8 8 8 f . . 
-. . . f 8 8 8 8 8 8 8 8 8 f . . 
-. . . f 8 8 8 8 8 8 8 8 8 8 f . 
+. . . f f 8 8 2 8 8 8 2 8 f . . 
+. . . f 8 8 8 8 2 8 2 8 8 f . . 
+. . . f 8 8 8 8 8 2 8 8 8 8 f . 
 . . . f 8 8 8 8 8 8 8 8 8 8 f . 
 . . f f f 5 5 5 5 5 5 5 f f f . 
 . . f f 5 4 4 e b f 4 4 5 5 f . 
