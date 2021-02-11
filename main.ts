@@ -1275,9 +1275,6 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
         . . . f f 1 d 1 d 1 d f f . . . 
         . . . . . f f b b f f . . . . . 
         `)
-    otherSprite.startEffect(effects.fountain, 1000)
-    pause(1000)
-    otherSprite.destroy()
     animation.runImageAnimation(
     otherSprite,
     [img`
@@ -1352,6 +1349,9 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     100,
     true
     )
+    otherSprite.startEffect(effects.fountain, 1000)
+    pause(1000)
+    otherSprite.destroy()
 })
 let X = 0
 let TheBoys: Sprite = null
