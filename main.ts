@@ -504,9 +504,9 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
             `,img`
             . . . . f f f f f f . . . . . . 
             . . . f 8 8 8 8 8 8 f f . . . . 
-            . . f 8 8 8 8 8 8 8 8 f f . . . 
-            . . f 8 8 8 8 8 8 8 8 8 f . . . 
-            . f 8 8 8 8 8 8 8 8 8 8 f . . . 
+            . . f 8 8 2 8 8 8 2 8 f f . . . 
+            . . f 8 8 8 2 8 2 8 8 8 f . . . 
+            . f 8 8 8 8 8 2 8 8 8 8 f . . . 
             . f 8 8 8 8 8 8 8 8 8 8 f . . . 
             . f f 5 5 5 5 5 5 5 5 f f f . . 
             . f 5 5 4 4 f b e 4 4 5 f f . . 
@@ -665,12 +665,12 @@ sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSp
         game.showLongText("MRS. BEATTY!!", DialogLayout.Bottom)
         Mrs_Beatty = sprites.create(img`
             . . . . . f f f f . . . . . 
-            . . . f f 5 5 5 5 f f . . . 
-            . . f 5 5 5 5 5 5 5 5 f . . 
-            . f 5 5 5 5 5 5 5 5 5 5 f . 
-            . f 5 5 5 d b b d 5 5 5 f . 
-            f 5 5 5 b 4 4 4 4 b 5 5 5 f 
-            f 5 5 c c 4 4 4 4 c c 5 5 f 
+            . . . f f e e e e f f . . . 
+            . . f e e e e e e e e f . . 
+            . f e e e e e e e e e e f . 
+            . f e e e d b b d e e e f . 
+            f e e e b 4 4 4 4 b e e e f 
+            f e e c c 4 4 4 4 c c e e f 
             f b b f b f 4 4 f b f b b f 
             f b b 4 1 f d d f 1 4 b b f 
             . f b f d d d d d d f b f . 
