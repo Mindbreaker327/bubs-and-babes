@@ -327,7 +327,7 @@ function Enemies () {
 sprites.onOverlap(SpriteKind.Yes, SpriteKind.Player, function (sprite, otherSprite) {
     sprite.destroy()
     otherSprite.destroy()
-    No.destroy()
+    No2.destroy()
     StarterFunction()
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -570,6 +570,7 @@ function StarterFunction () {
     controller.moveSprite(mySpriteUp, 100, 100)
     mySpriteUp.setPosition(MySpriteX, 80)
     mySpriteUp.setStayInScreen(true)
+    X = 0
     Shield = 0
     VY = 25
     Time = 2000
@@ -614,7 +615,7 @@ sprites.onOverlap(SpriteKind.No, SpriteKind.Player, function (sprite, otherSprit
     sprite.destroy()
     game.showLongText("What would you be doing anyway, loser?", DialogLayout.Center)
     otherSprite.destroy()
-    Yes.destroy()
+    Yes2.destroy()
     StarterFunction()
 })
 scene.onHitWall(SpriteKind.Ally, function (sprite, location) {
@@ -835,7 +836,7 @@ sprites.onOverlap(SpriteKind.Ally, SpriteKind.Enemy, function (sprite, otherSpri
     otherSprite.startEffect(effects.fountain, 1000)
     pause(1000)
     otherSprite.destroy()
-    info.changeScoreBy(1)
+    info.changeScoreBy(50)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     mySpriteUp.setImage(img`
@@ -1297,7 +1298,7 @@ info.onLifeZero(function () {
     game.showLongText("Thanks for playing Bubs and the Babes", DialogLayout.Center)
     game.showLongText("Brought to you by Virtue Games", DialogLayout.Center)
     game.showLongText("Special thanks to TJ: Lead Developer     Antone: Creative and Art Design      Harvey: Developer and Lead Playtester       Bubs: Inspiration and Comic Relief       Mr. Ruma: Sensei        ", DialogLayout.Center)
-    Yes = sprites.create(img`
+    Yes2 = sprites.create(img`
         1 1 1 1 1 1 1 1 1 1 1 1 1 
         1 2 1 2 1 2 2 2 1 2 2 2 1 
         1 2 1 2 1 2 1 1 1 2 1 1 1 
@@ -1306,7 +1307,7 @@ info.onLifeZero(function () {
         1 2 2 2 1 2 2 2 1 2 2 2 1 
         1 1 1 1 1 1 1 1 1 1 1 1 1 
         `, SpriteKind.Yes)
-    No = sprites.create(img`
+    No2 = sprites.create(img`
         1 1 1 1 1 1 1 1 1 
         1 2 2 2 1 2 2 2 1 
         1 2 1 2 1 2 1 2 1 
@@ -1315,9 +1316,10 @@ info.onLifeZero(function () {
         1 2 1 2 1 2 2 2 1 
         1 1 1 1 1 1 1 1 1 
         `, SpriteKind.No)
-    Yes.setPosition(30, 60)
-    No.setPosition(90, 60)
+    Yes2.setPosition(30, 60)
+    No2.setPosition(90, 60)
     game.showLongText("Play Again?", DialogLayout.Bottom)
+    StarterFunction()
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy()
@@ -1419,19 +1421,19 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     true
     )
 })
-let X = 0
 let TheBoys: Sprite = null
 let Mrs_Beatty: Sprite = null
 let PowerUp1: Sprite = null
-let Yes: Sprite = null
+let Yes2: Sprite = null
 let Powerup: Sprite = null
 let Life = 0
 let VX = 0
 let Time = 0
 let Shield = 0
+let X = 0
 let projectile: Sprite = null
 let Limit = 0
-let No: Sprite = null
+let No2: Sprite = null
 let VY = 0
 let PowerupType = 0
 let mySpriteUp: Sprite = null
@@ -1464,10 +1466,10 @@ game.onUpdateInterval(1500, function () {
     Limit += -1
 })
 game.onUpdateInterval(Time, function () {
-    Enemies()
-})
-game.onUpdateInterval(Time, function () {
     if (X == 1) {
         Obstacle.destroy()
     }
+})
+game.onUpdateInterval(Time, function () {
+    Enemies()
 })
