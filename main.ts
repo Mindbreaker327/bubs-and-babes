@@ -1252,6 +1252,7 @@ info.onLifeZero(function () {
     game.showLongText("Thanks for playing Bubs and the Babes", DialogLayout.Center)
     game.showLongText("Brought to you by Virtue Games", DialogLayout.Center)
     game.showLongText("Special thanks to TJ: Lead Developer     Antone: Creative and Art Design      Harvey: Developer and Lead Playtester       Bubs: Inspiration and Comic Relief       Mr. Ruma: Sensei        ", DialogLayout.Center)
+    game.over(false)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy()
