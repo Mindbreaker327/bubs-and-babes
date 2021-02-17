@@ -1399,10 +1399,10 @@ game.onUpdateInterval(1500, function () {
     Limit += -1
 })
 game.onUpdateInterval(Time, function () {
-    Enemies()
-})
-game.onUpdateInterval(Time, function () {
     if (X == 1) {
         Obstacle.destroy()
     }
+})
+game.onUpdateInterval(Time, function () {
+    Enemies()
 })
