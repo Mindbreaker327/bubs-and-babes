@@ -781,6 +781,7 @@ sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSp
             . . . . . d d . . d d . . . . . 
             `, SpriteKind.Player)
         controller.moveSprite(mySpriteUp)
+        mySpriteUp.setStayInScreen(true)
         for (let index = 0; index < 5; index++) {
             pause(1000)
             Obstacle.setVelocity(0, 0)
@@ -807,6 +808,7 @@ sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSp
             `, SpriteKind.Player)
         controller.moveSprite(mySpriteUp)
         PowerupType = 0
+        mySpriteUp.setStayInScreen(true)
     }
 })
 sprites.onOverlap(SpriteKind.Ally, SpriteKind.Enemy, function (sprite, otherSprite) {
