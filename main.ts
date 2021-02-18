@@ -814,11 +814,11 @@ sprites.onOverlap(SpriteKind.Boost, SpriteKind.Player, function (sprite, otherSp
             `, SpriteKind.Player)
         controller.moveSprite(mySpriteUp)
         mySpriteUp.setStayInScreen(true)
-        for (let index = 0; index < 5; index++) {
-            pause(1000)
+        for (let index = 0; index < 10; index++) {
+            pause(Time)
             Obstacle.setVelocity(0, 0)
         }
-        pause(5000)
+        pause(Time * 10)
         mySpriteUp.destroy()
         mySpriteUp = sprites.create(img`
             . . . . . . f f f f . . . . . . 
@@ -1281,6 +1281,7 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 info.onLifeZero(function () {
     info.stopCountdown()
+    Score = info.score()
     X = 1
     tiles.setTilemap(tilemap`level5`)
     game.showLongText("Thanks for playing Bubs and the Babes", DialogLayout.Center)
@@ -1389,6 +1390,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     otherSprite.destroy()
 })
 let X = 0
+let Score = 0
 let TheBoys: Sprite = null
 let Mrs_Beatty: Sprite = null
 let PowerUp1: Sprite = null
